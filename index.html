@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English FAL Paper 2 — Macbeth &amp; Poetry Master Guide</title>
+<style>
+:root{
+  --ink:#1a1f2b; --muted:#5b6472; --bg:#f5f7fa; --card:#ffffff;
+  --accent:#0e7c66; --accent-soft:#e3f4ef; --accent-ink:#0b5f4f;
+  --gold:#b8860b; --gold-soft:#fdf3dc; --line:#e3e8ef;
+  --danger:#b3261e; --danger-soft:#fdecea; --ok:#1a7f37; --ok-soft:#e6f4ea;
+  --radius:12px; --shadow:0 1px 3px rgba(16,24,40,.08),0 1px 2px rgba(16,24,40,.04);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;font-size:16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow)}
+.topbar-in{max-width:1180px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:17px;letter-spacing:-.02em;color:var(--accent-ink);white-space:nowrap}
+.brand span{color:var(--gold)}
+#search{flex:1;min-width:200px;padding:9px 13px;border:1px solid var(--line);border-radius:9px;font-size:14px;background:var(--bg)}
+#search:focus{outline:2px solid var(--accent);border-color:transparent}
+
+nav{background:var(--card);border-bottom:1px solid var(--line)}
+nav .nav-in{max-width:1180px;margin:0 auto;padding:0 10px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:thin}
+nav a{display:inline-block;padding:10px 12px;font-size:13.5px;font-weight:600;color:var(--muted);
+  white-space:nowrap;border-bottom:3px solid transparent}
+nav a:hover{color:var(--accent-ink);text-decoration:none;border-color:var(--accent-soft)}
+nav a.active{color:var(--accent-ink);border-color:var(--accent)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:26px 18px 80px}
+section{margin-bottom:46px}
+section .sec-head{display:flex;align-items:center;gap:12px;margin:0 0 6px}
+section h2{font-size:26px;letter-spacing:-.02em;margin:0;color:var(--accent-ink)}
+section h3{font-size:19px;margin:26px 0 8px;color:var(--ink)}
+section h4{font-size:15.5px;margin:18px 0 6px}
+.lead{color:var(--muted);max-width:70ch;margin:6px 0 18px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent-ink);font-size:12px;
+  font-weight:700;padding:2px 9px;border-radius:999px;letter-spacing:.02em}
+.badge.gold{background:var(--gold-soft);color:#7a5c10}
+.badge.red{background:var(--danger-soft);color:var(--danger)}
+
+/* cards + grids */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.stat{padding:16px 18px;text-align:center}
+.stat .n{font-size:30px;font-weight:800;color:var(--accent-ink);letter-spacing:-.02em}
+.stat .l{font-size:13px;color:var(--muted);margin-top:2px}
+
+/* tables */
+.tblwrap{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;background:var(--card);font-size:14px;min-width:520px}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:#f0f4f8;font-weight:700;color:var(--accent-ink)}
+tr:nth-child(even) td{background:#fafbfd}
+td .y{font-weight:700;color:var(--accent-ink)}
+
+/* collapsible */
+details{border:1px solid var(--line);border-radius:10px;background:var(--card);margin:9px 0;overflow:hidden}
+details summary{cursor:pointer;padding:13px 16px;font-weight:600;list-style:none;display:flex;align-items:center;gap:10px;color:var(--ink)}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"▸";color:var(--accent);transition:transform .18s;font-weight:700}
+details[open] summary::before{transform:rotate(90deg)}
+details .dbody{padding:4px 18px 16px;border-top:1px solid var(--line)}
+
+/* callouts */
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;padding:12px 16px;margin:12px 0}
+.callout.gold{border-color:var(--gold);background:var(--gold-soft)}
+.callout.red{border-color:var(--danger);background:var(--danger-soft)}
+.callout b{color:inherit}
+.callout .t{font-weight:800;display:block;margin-bottom:2px}
+
+/* command word chips */
+.chip{display:inline-block;background:var(--accent-soft);border:1px solid #bfe3d8;color:var(--accent-ink);
+  padding:4px 11px;border-radius:999px;font-size:13px;font-weight:600;margin:2px 2px}
+.chip.g{background:var(--gold-soft);border-color:#ecd9a8;color:#7a5c10}
+
+/* weak vs strong */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vs .weak{background:var(--danger-soft);border:1px solid #f0c4c0;border-radius:10px;padding:12px 14px}
+.vs .strong{background:var(--ok-soft);border:1px solid #b9dec3;border-radius:10px;padding:12px 14px}
+.vs .h{font-weight:800;font-size:13px;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.vs .weak .h{color:var(--danger)} .vs .strong .h{color:var(--ok)}
+@media(max-width:640px){.vs{grid-template-columns:1fr}}
+
+/* flashcards */
+.fc-stage{display:flex;flex-direction:column;align-items:center;gap:14px}
+.flashcard{width:100%;max-width:560px;min-height:200px;perspective:1200px;cursor:pointer}
+.fc-inner{position:relative;width:100%;min-height:200px;transform-style:preserve-3d;transition:transform .45s}
+.flashcard.flipped .fc-inner{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--card);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;box-shadow:var(--shadow)}
+.fc-back{transform:rotateY(180deg);background:var(--accent-soft)}
+.fc-face .cat{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.fc-face .big{font-size:22px;font-weight:800}
+.fc-face .small{font-size:14.5px;color:var(--muted);margin-top:8px}
+.fc-hint{font-size:12px;color:var(--muted)}
+.fc-controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.fc-count{font-size:13px;color:var(--muted)}
+
+/* quiz */
+.quiz-q{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:18px 20px;margin:12px 0}
+.quiz-q .q{font-weight:700;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;padding:10px 13px;margin:6px 0;border:1px solid var(--line);
+  border-radius:9px;background:#fff;cursor:pointer;font-size:14.5px;transition:.12s}
+.opt:hover{border-color:var(--accent)}
+.opt.correct{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.opt.wrong{background:var(--danger-soft);border-color:var(--danger);color:var(--danger)}
+.opt:disabled{cursor:default;opacity:.92}
+.explain{background:#f0f4f8;border-radius:9px;padding:11px 14px;margin-top:10px;font-size:14px;display:none}
+.explain.show{display:block}
+.quizbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:14px 0}
+
+/* progress */
+.pbar{height:10px;background:#e6ebf1;border-radius:999px;overflow:hidden;margin:8px 0}
+.pbar>div{height:100%;background:linear-gradient(90deg,var(--accent),#2fa88e);transition:width .3s;border-radius:999px}
+.check{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:8px;margin:3px 0}
+.check:hover{background:#f2f6fa}
+.check input{margin-top:3px;transform:scale(1.15)}
+.check.done span{color:var(--muted);text-decoration:line-through}
+
+/* buttons */
+button{font-family:inherit;cursor:pointer}
+.btn{background:var(--accent);color:#fff;border:0;border-radius:9px;padding:10px 16px;font-size:14px;font-weight:700}
+.btn:hover{background:var(--accent-ink)}
+.btn.ghost{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:#eef2f6}
+
+.hl{background:#ffe58a;border-radius:2px}
+.sources{font-size:13px;color:var(--muted)}
+.sources li{margin:4px 0;word-break:break-all}
+.toc-pill{display:flex;flex-wrap:wrap;gap:8px}
+.qa-block{border-left:3px solid var(--accent);padding-left:14px;margin:16px 0}
+.tag-row{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0}
+.small{font-size:13px;color:var(--muted)}
+mark{background:#ffe58a}
+kbd{background:#eef2f6;border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">English FAL <span>P2</span> · Macbeth &amp; Poetry</div>
+    <input id="search" type="search" placeholder="Search the whole guide… (e.g. 'irony', 'Macduff', 'metaphor')" autocomplete="off">
+  </div>
+</div>
+
+<nav><div class="nav-in" id="nav">
+  <a href="#dashboard" class="active">Dashboard</a>
+  <a href="#analysis">Past-Paper Analysis</a>
+  <a href="#answering">How to Answer</a>
+  <a href="#poetry-theory">Poetry Theory</a>
+  <a href="#macbeth-theory">Macbeth Techniques</a>
+  <a href="#macbeth-revision">Macbeth Revision</a>
+  <a href="#predictions">Predictions</a>
+  <a href="#strategy">Exam Strategy</a>
+  <a href="#practice">Flashcards &amp; Quiz</a>
+  <a href="#progress">Progress</a>
+</div></nav>
+<div class="wrap">
+
+<!-- ============ DASHBOARD ============ -->
+<section id="dashboard">
+  <div class="sec-head"><h2>📊 Dashboard &amp; Exam Overview</h2></div>
+  <p class="lead">Everything below is grounded in the <b>official DBE English First Additional Language Paper 2</b> question papers and marking guidelines from November 2021–2025 (five full papers). It covers <b>only</b> the two setworks you study: <b>Macbeth</b> (Drama) and <b>Poetry</b>. No novels, no short stories.</p>
+
+  <div class="grid g3">
+    <div class="card stat"><div class="n">70</div><div class="l">total marks</div></div>
+    <div class="card stat"><div class="n">2½ hrs</div><div class="l">writing time (150 min)</div></div>
+    <div class="card stat"><div class="n">2</div><div class="l">sections you answer</div></div>
+  </div>
+
+  <h3>What you actually answer</h3>
+  <div class="grid g2">
+    <div class="card">
+      <div class="badge">SECTION B · DRAMA</div>
+      <h4 style="margin-top:10px">Macbeth — 35 marks</h4>
+      <p class="small" style="margin:4px 0 8px">Contextual question on <b>TWO extracts</b> (3.1 and 3.2). Read each extract, answer all the sub-questions. <b>No essay</b> in FAL — every question is point-marked.</p>
+      <div class="tag-row"><span class="chip">Extract 3.1 ≈ 17–18 marks</span><span class="chip">Extract 3.2 ≈ 17–18 marks</span></div>
+    </div>
+    <div class="card">
+      <div class="badge gold">SECTION D · POETRY</div>
+      <h4 style="margin-top:10px">Two prescribed poems — 35 marks</h4>
+      <p class="small" style="margin:4px 0 8px">Contextual questions on <b>TWO poems</b> (6.1 and 6.2). The full poems are printed in the paper. <b>No essay, no unseen poem</b> — both poems are from your prescribed list.</p>
+      <div class="tag-row"><span class="chip g">Poem 6.1 ≈ 17–18 marks</span><span class="chip g">Poem 6.2 ≈ 17–18 marks</span></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="t">⚠️ The one instruction that decides your paper</span>
+    “Answer <b>TWO questions in all</b>, ONE from ANY TWO sections.” You study Macbeth and Poetry, so you answer <b>Section B (Drama) AND Section D (Poetry)</b> — and nothing else. If you accidentally answer a novel or short-story question, you break the “one question per genre / two sections only” rule and lose marks.
+  </div>
+
+  <h3>The paper structure (identical every year, 2021–2025)</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Section</th><th>Content</th><th>Marks</th><th>You answer?</th></tr></thead>
+    <tbody>
+      <tr><td><b>A</b></td><td>Novel (Cry, the Beloved Country / Jekyll &amp; Hyde)</td><td>35</td><td>❌ No</td></tr>
+      <tr><td><b>B</b></td><td>Drama — <b>Macbeth</b> / My Children! My Africa!</td><td>35</td><td>✅ Yes — Macbeth</td></tr>
+      <tr><td><b>C</b></td><td>Short stories (two extracts)</td><td>35</td><td>❌ No</td></tr>
+      <tr><td><b>D</b></td><td>Poetry — two prescribed poems</td><td>35</td><td>✅ Yes</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout gold">
+    <span class="t">⏱ Suggested time: ~75 minutes per section</span>
+    The paper itself tells you to spend roughly 75 minutes on each of your two sections. That is ~2.1 minutes per mark. Use it: the 3-mark “discuss” questions deserve the most time.
+  </div>
+</section>
+
+<!-- ============ PAST PAPER ANALYSIS ============ -->
+<section id="analysis">
+  <div class="sec-head"><h2>🔬 Past-Paper Analysis (Nov 2021–2025)</h2></div>
+  <p class="lead">Five consecutive national papers were analysed in full: question structures, command words, mark allocations, devices tested, and the <em>scenes/poems</em> selected. The goal is to reveal <b>what repeats</b>, so you know exactly which skills to drill. Every claim below is traceable to a specific paper.</p>
+
+  <h3>Method &amp; scope</h3>
+  <div class="card">
+    <ul class="small" style="margin:4px 0">
+      <li><b>Sources:</b> official DBE November question papers and marking guidelines, 2021–2025 (see <a href="#sources">Sources</a>). May/June 2025 national paper also cross-checked for confirmation.</li>
+      <li><b>Analysed:</b> Section B (Macbeth, Q3) and Section D (Poetry, Q6) in every paper — the question stems, command words, mark values, and the memo's mark-awarding notes.</li>
+      <li><b>Excluded:</b> novels and short stories (you don't study them).</li>
+      <li><b>Honesty rule:</b> figures are counts from the papers, not guesses. Where a pattern is “most years” rather than “every year”, I say so explicitly.</li>
+    </ul>
+  </div>
+
+  <h3>1 · The poems and scenes selected (context only)</h3>
+  <p class="small" style="margin:4px 0 10px">You don't need to memorise this — it's shown to make the <b>pattern</b> visible. Poems rotate from the fixed prescribed list; Macbeth extracts draw from recurring “hotspot” scenes.</p>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Poems tested (Section D)</h4>
+      <div class="tblwrap"><table style="min-width:0">
+        <thead><tr><th>Year</th><th>Poem 6.1</th><th>Poem 6.2</th></tr></thead>
+        <tbody>
+          <tr><td class="y">2021</td><td>Sonnet 18 (Shakespeare)</td><td>Alexandra (Serote)</td></tr>
+          <tr><td class="y">2022</td><td>Captive (Slater)</td><td>Mid-term break (Heaney)</td></tr>
+          <tr><td class="y">2023</td><td>Sonnet 73 (Shakespeare)</td><td>The lake isle of Innisfree (Yeats)</td></tr>
+          <tr><td class="y">2024</td><td>The slave dealer (Pringle)</td><td>Hard to find (Jojo)</td></tr>
+          <tr><td class="y">2025</td><td>Inversnaid (Hopkins)</td><td>Sonnet 73 (Shakespeare)</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">Note: <b>Sonnet 73</b> appeared in both 2023 and 2025 — Shakespeare sonnets are clearly favoured. Every poem is from the CAPS prescribed anthology.</p>
+    </div>
+    <div class="card">
+      <h4>Macbeth extracts tested (Section B)</h4>
+      <div class="tblwrap"><table style="min-width:0">
+        <thead><tr><th>Year</th><th>Extract 3.1</th><th>Extract 3.2</th></tr></thead>
+        <tbody>
+          <tr><td class="y">2021</td><td>Act 1 Sc 3–4</td><td>Act 5 Sc 7–8</td></tr>
+          <tr><td class="y">2022</td><td>Act 1 Sc 2</td><td>Act 2 Sc 4</td></tr>
+          <tr><td class="y">2023</td><td>Act 1 Sc 6</td><td>Act 5 Sc 5</td></tr>
+          <tr><td class="y">2024</td><td>Act 3 Sc 4</td><td>Act 5 Sc 8</td></tr>
+          <tr><td class="y">2025</td><td>Act 2 Sc 1–2</td><td>Act 5 Sc 3–4</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small"><b>Act 5 appears in 4 of 5 years</b> (2021, 2023, 2024, 2025) — the climax and Macbeth's fall is the single most-tested part of the play. Act 1 in 3 years; Act 2 in 2; Act 3 once; Act 4 never.</p>
+    </div>
+  </div>
+
+  <h3>2 · Mark distribution — how the 35 marks split</h3>
+  <p class="lead" style="margin-top:4px">Each section (Macbeth 35, Poetry 35) is built from the same value-ladder. Verified by tallying every 2025 question (representative of all five years):</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Question value</th><th>Typical items per section</th><th>What it tests</th><th>How to treat it</th></tr></thead>
+    <tbody>
+      <tr><td><b>1 mark</b></td><td>~8–9 items</td><td>Recall: name a device, pick A–D, one fact, a tone word, a character match</td><td>One word / short phrase. Fast marks — don't over-write.</td></tr>
+      <tr><td><b>2 marks</b></td><td>~6–7 items</td><td>Explanation with a reason, or two distinct points</td><td>Give the <b>point + justification</b> (the memo often says “both parts must be included”).</td></tr>
+      <tr><td><b>3 marks</b></td><td>4 items (2 per extract/poem)</td><td>Discussion: a theme, or “Discuss your view” on a character/speaker</td><td>2–3 <b>substantiated</b> points, grounded in the text.</td></tr>
+      <tr><td><b>4 marks</b></td><td>1 item (the matching question)</td><td>4 × 1 matching of characters/terms</td><td>One mark per correct match.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <span class="t">💡 The 3-mark questions are 12 of your 70 marks (~17%)</span>
+    Four “discuss” questions (two theme + two “your view”), each 3 marks. They are the hardest to earn full marks on — the memo repeatedly requires the answer to be <b>“well-substantiated”</b> and <b>“grounded in the play/poem.”</b> A bare opinion gets 1–2 marks, never 3.
+  </div>
+
+  <h3>3 · The question-type families (what repeats every year)</h3>
+  <p class="lead" style="margin-top:4px">Across all five papers, the same question families recur in both Macbeth and Poetry. “5/5” = present in every paper.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Question family</th><th>Frequency</th><th>Typical wording</th><th>Marks</th></tr></thead>
+    <tbody>
+      <tr><td>Matching (Column A → B)</td><td>Macbeth 5/5 · Poetry 2/5</td><td>“Choose a description from COLUMN B that matches the name in COLUMN A.”</td><td>4×1</td></tr>
+      <tr><td>Fill-in-the-blank / word list</td><td>Poetry 4/5</td><td>“Complete the sentence using the words in the list.”</td><td>4×1</td></tr>
+      <tr><td>Multiple choice (A–D)</td><td>5/5 both</td><td>“Choose the correct answer… write only the letter.”</td><td>1</td></tr>
+      <tr><td>True/False fix</td><td>5/5 both</td><td>“State why the statement is FALSE” / “Change ONE word to make it TRUE” / “Replace the underlined word.”</td><td>1</td></tr>
+      <tr><td>Time &amp; place / setting</td><td>5/5 both</td><td>“Describe the time and place where this extract/poem is set.”</td><td>2</td></tr>
+      <tr><td>Figure of speech</td><td>5/5 both</td><td>“(a) Identify the figure of speech. (b) Explain why it is relevant.”</td><td>1 + 2</td></tr>
+      <tr><td>Irony</td><td>5/5 both</td><td>“Explain the irony in [character's] words…”</td><td>2</td></tr>
+      <tr><td>Tone</td><td>5/5 both</td><td>“(a) What tone would [speaker] use? (b) Why?”</td><td>1 + 1</td></tr>
+      <tr><td>State of mind / character</td><td>5/5 both</td><td>“What does this reveal about [X]'s character? Substantiate your answer.”</td><td>2</td></tr>
+      <tr><td>Director's instruction</td><td>Macbeth 5/5</td><td>“If you were the director, what would you tell [X] to do? State TWO actions.”</td><td>2</td></tr>
+      <tr><td>“State TWO points”</td><td>Poetry 5/5</td><td>“To what does X refer? State TWO points.”</td><td>2</td></tr>
+      <tr><td>Literal vs figurative meaning</td><td>Poetry 3/5</td><td>“Explain the literal/figurative meaning of this line.”</td><td>1–2 each</td></tr>
+      <tr><td>Theme discussion</td><td>5/5 both</td><td>“One of the themes in [text] is [X]. Discuss this theme.”</td><td>3</td></tr>
+      <tr><td>“Discuss your view”</td><td>5/5 both</td><td>“[Statement]. Discuss your view. Refer to the [drama/poem] as a whole.”</td><td>3</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>4 · Command-word frequency (counted across all 5 papers)</h3>
+  <p class="small" style="margin:4px 0 10px">Counts below are the totals for the whole paper's four sections; the two sections you write (Macbeth + Poetry) contain roughly half of each total. The <b>ranking</b> — not the exact number — is what matters.</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Command word / phrase</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr><td><b>Refer to line(s)…</b></td><td>24</td><td>22</td><td>21</td><td>23</td><td>24</td><td>Dominant — nearly every question is line-anchored</td></tr>
+      <tr><td><b>Explain</b> (all forms)</td><td>17</td><td>22</td><td>17</td><td>20</td><td>23</td><td>Most common thinking verb</td></tr>
+      <tr><td><b>Discuss</b> (all forms)</td><td>19</td><td>20</td><td>18</td><td>18</td><td>18</td><td>Always present (theme + view)</td></tr>
+      <tr><td><b>Substantiate your answer</b></td><td>11</td><td>12</td><td>12</td><td>11</td><td>12</td><td>Every year — evidence is mandatory</td></tr>
+      <tr><td><b>Identify the figure of speech</b></td><td>6</td><td>7</td><td>7</td><td>7</td><td>6</td><td>Every year</td></tr>
+      <tr><td><b>Explain the irony</b></td><td>4</td><td>5</td><td>5</td><td>6</td><td>6</td><td>Every year, rising</td></tr>
+      <tr><td><b>Describe the setting / time &amp; place</b></td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>Exactly 6 every year</td></tr>
+      <tr><td><b>What tone / Why would</b></td><td>6</td><td>5–6</td><td>6</td><td>6</td><td>6</td><td>Every year</td></tr>
+      <tr><td><b>State TWO</b></td><td>6</td><td>6</td><td>5</td><td>6</td><td>6</td><td>Every year</td></tr>
+      <tr><td><b>Choose the correct answer</b></td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>Exactly 6 every year</td></tr>
+      <tr><td><b>One of the themes…</b></td><td>6</td><td>6</td><td>6</td><td>6</td><td>6</td><td>Exactly 6 every year</td></tr>
+      <tr><td><b>If you were the director</b></td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td><td>Exactly 2 every year (Macbeth)</td></tr>
+      <tr><td><b>Change ONE word / Replace word</b></td><td>0</td><td>0</td><td>0</td><td>6</td><td>6</td><td>Recent favourite (2024–2025)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">“Exactly 6 every year” items reflect the paper's fixed symmetry: one per text-set across the six text-sets (2 novels + 2 dramas + 2 short stories + 2 poems = 8 sets; the 6s are the recurring once-per-set items).</p>
+</section>
+<!-- ============ HOW TO ANSWER ============ -->
+<section id="answering">
+  <div class="sec-head"><h2>🎯 How to Answer Every Question Type</h2></div>
+  <p class="lead">This section translates the <b>marking guidelines</b> into a repeatable method. The golden rules come straight from the memo's own instructions (present in every year's marking guideline):</p>
+
+  <div class="card" style="margin-bottom:18px">
+    <h4 style="margin-top:0">The memo's marking rules (verbatim principles, 2021–2025)</h4>
+    <ul class="small">
+      <li>If you give two answers and the first is wrong, the <b>first one is marked</b> — don't hedge with two guesses.</li>
+      <li>A spelling error only costs a mark <b>if it changes the meaning</b>.</li>
+      <li>You are <b>not penalised</b> for omitting inverted commas when quoting.</li>
+      <li><b>Open-ended questions:</b> “no marks for YES/NO or I AGREE/DISAGREE — the reason/substantiation is what is considered.”</li>
+      <li><b>TRUE/FALSE:</b> same rule — the reason earns the mark, not the word TRUE/FALSE.</li>
+      <li>Number answers correctly, and <b>start each section on a new page</b>.</li>
+    </ul>
+  </div>
+
+  <h3>The command-word ladder (what the verb demands)</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Command word</th><th>Marks</th><th>What the examiner wants</th><th>Answer length</th></tr></thead>
+    <tbody>
+      <tr><td><b>Choose / Complete / State</b></td><td>1</td><td>A single correct selection, word, or fact</td><td>One word / a letter</td></tr>
+      <tr><td><b>Identify / Name</b></td><td>1</td><td>The correct term (device, tone, character)</td><td>One word</td></tr>
+      <tr><td><b>Describe</b></td><td>2</td><td>Two factual elements (e.g. time <em>and</em> place)</td><td>One sentence, two parts</td></tr>
+      <tr><td><b>Explain</b></td><td>2</td><td>A point + its reason (or two linked points)</td><td>1–2 sentences</td></tr>
+      <tr><td><b>Substantiate</b></td><td>(part of 2–3)</td><td>Evidence — a quote or reference that proves your claim</td><td>Tagged onto your answer</td></tr>
+      <tr><td><b>Discuss</b></td><td>3</td><td>2–3 substantiated points showing understanding</td><td>A short paragraph</td></tr>
+      <tr><td><b>Compare / Contrast</b></td><td>2–3</td><td>Similarity <em>and</em>/or difference, both sides</td><td>Two-part answer</td></tr>
+      <tr><td><b>Comment on</b></td><td>2–3</td><td>Your judgement, backed by the text</td><td>Point + evidence</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>How to answer the 1-mark questions</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> pure recall/recognition. The memo lists a single correct answer (or a small set of acceptable synonyms).</p>
+    <p><b>Approach:</b> answer only what is asked — a letter (A–D), one word, one fact. No sentences.</p>
+    <p><b>Earns full marks:</b> the exact term/fact, spelled acceptably (a spelling that doesn't change meaning is still credited).</p>
+    <p><b>Common mistakes:</b> writing a paragraph for a 1-mark question (wastes time); giving two answers (the first is marked); misreading “FALSE” as “TRUE”.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak</span><em>Q: Identify the figure of speech in line 4.</em><br>“I think it might be a metaphor because it compares two things, and also maybe personification since…”</div>
+      <div class="strong"><span class="h">✅ Full marks</span><em>Q: Identify the figure of speech in line 4.</em><br>“Metaphor”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “Explain” (2 marks)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> the memo almost always pairs an answer with a reason, often ending “NOTE: <b>Both parts must be included to earn the marks</b>.”</p>
+    <p><b>Approach:</b> state the point, then attach “because / as / since…” with the reason — or give two distinct facts.</p>
+    <p><b>Earns full marks:</b> both halves present. Example from the 2025 memo: “Macbeth is anxious/nervous <b>as</b> he agonises about his footsteps being heard.” (emotion + reason).</p>
+    <p><b>Common mistakes:</b> giving only the emotion or only the reason; explaining the wrong line; restating the quote without explaining it.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak (1/2)</span><em>Q: Explain the irony in Macbeth's words, “And purge it to a sound and pristine health.”</em><br>“Macbeth wants Scotland to be healthy.”</div>
+      <div class="strong"><span class="h">✅ Full marks (2/2)</span><em>Same question</em><br>“Macbeth pleads with the Doctor to heal Scotland, <b>yet he is the very cause of its suffering</b>.”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “Identify the figure of speech… Explain why it is relevant” (1 + 2)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> (a) the correct device name — 1 mark; (b) an explanation using the memo's “<b>in the same way that… so too…</b>” comparison structure.</p>
+    <p><b>Approach:</b> (a) name it. (b) break the image into its two halves and link them: “Just as X [literally]…, so too Y [the figurative meaning].”</p>
+    <p><b>Earns full marks:</b> the memo's model answer (2025, Sonnet 73): “Just as the branches of the trees become bare and weak as the seasons change, <b>so too does the speaker's body become fragile as he ages</b>.”</p>
+    <p><b>Common mistakes:</b> naming the device but not explaining it (2 marks lost); explaining the device's general meaning instead of its meaning <em>in this line</em>; confusing simile/metaphor/personification.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak</span>“It is a metaphor. Metaphors compare things.”</div>
+      <div class="strong"><span class="h">✅ Full marks</span>“Metaphor (1). In the same way that an empty cathedral has no singers, so too the bare branches have no birds — both are deserted and lifeless (2).”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “Explain the irony” (2 marks)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> the <b>gap between what is said/appears and what is actually true</b>. The memo states the surface meaning, then reveals the contradiction.</p>
+    <p><b>Approach:</b> name the expectation vs the reality. “He says X, <b>yet</b> actually Y.” (Use “yet/however/but” — it forces the contrast the marker is looking for.)</p>
+    <p><b>Earns full marks:</b> both sides of the contradiction in one sentence.</p>
+    <p><b>Common mistakes:</b> defining irony (“irony is when…”) instead of explaining <em>this</em> irony; giving only the surface meaning; treating sarcasm/coincidence as irony.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak</span>“It's ironic because he's lying.”</div>
+      <div class="strong"><span class="h">✅ Full marks</span>“Lady Macbeth welcomes Duncan warmly and says everything will be repaid, <b>yet</b> she is already plotting to have him murdered that very night.”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “Describe the time and place / setting” (2 marks)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> two elements — <b>time</b> and <b>place</b> — each worth 1 mark. The memo literally writes “Time: … Place: … NOTE: accept any ONE reference to time and ONE to place.”</p>
+    <p><b>Approach:</b> answer with two labelled parts: “Time: … Place: …”. Never give two places and no time.</p>
+    <p><b>Earns full marks:</b> a precise time and a precise place, drawn from the extract/poem.</p>
+    <p><b>Common mistakes:</b> giving only the place; vague answers (“at night, somewhere in the castle”); describing the <em>mood</em> instead of the setting.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak (1/2)</span>“In Macbeth's castle.”</div>
+      <div class="strong"><span class="h">✅ Full marks (2/2)</span>“Time: late at night, before Duncan is murdered. Place: the courtyard of Macbeth's castle (Inverness).”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “What tone… and why?” (1 + 1)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> (a) a precise emotion word (the memo accepts a small set, e.g. “Confidence/assurance”); (b) the reason the speaker feels that way.</p>
+    <p><b>Approach:</b> (a) one accurate tone word (angry, anxious, sarcastic, confident, pleading…). (b) “because he/she…” with the trigger from the text.</p>
+    <p><b>Earns full marks:</b> tone word + reason. Memo example (2025): “(a) Confidence/assurance. (b) He is convinced that Scotland will be returned to its former glory.”</p>
+    <p><b>Common mistakes:</b> giving a vague “happy/sad”; giving the tone but no reason; describing what is said instead of how it is said.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak</span>“He is sad.”</div>
+      <div class="strong"><span class="h">✅ Full marks</span>“(a) Resigned/despairing. (b) Macbeth has just heard of his wife's death and realises life has lost its meaning.”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “What does this reveal about [X]'s character? Substantiate” (2 marks)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> a character trait + proof from the text. The memo pairs the trait with the evidence (“He is principled <b>when he claims</b> that not even money will persuade him to return”).</p>
+    <p><b>Approach:</b> <b>trait → because → evidence</b>. Use the word “because” or “when he/she…” to attach the proof.</p>
+    <p><b>Earns full marks:</b> trait + substantiation in one sentence. “Substantiate” = quote or point to the exact line/event.</p>
+    <p><b>Common mistakes:</b> giving a trait with no proof; quoting without naming the trait; giving a plot summary instead of a character judgement.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak (1/2)</span>“The Doctor is a good man.”</div>
+      <div class="strong"><span class="h">✅ Full marks (2/2)</span>“The Doctor is principled/ethical <b>because he says not even money would make him stay in Macbeth's castle</b>.”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “If you were the director… State TWO actions” (2 marks)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> two physical, <b>stageable</b> actions (body language, gesture, movement) — not a tone or an opinion. The memo says “Accept any TWO… or any other relevant actions.”</p>
+    <p><b>Approach:</b> write two imperative sentences describing what the actor does with their body/voice/position.</p>
+    <p><b>Earns full marks:</b> two concrete actions. Memo example (2025): “Siward should move his hands from left to right. He should simulate a circle.”</p>
+    <p><b>Common mistakes:</b> giving one action and repeating it; giving a feeling (“he should be angry”) instead of an action; writing stage directions that can't be acted.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak</span>“He should be scared and angry.”</div>
+      <div class="strong"><span class="h">✅ Full marks</span>“Macbeth should beat his chest. He should point menacingly at the empty chair.”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “One of the themes… Discuss this theme” (3 marks)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> an organised discussion of the theme using 2–3 concrete examples from the text. The memo lists several “viewpoints, among others” and accepts any well-supported angle.</p>
+    <p><b>Approach:</b> state the theme in your first sentence, then give 2–3 examples, each tied to a quote/event.</p>
+    <p><b>Earns full marks:</b> the memo's own note: “For full marks, the response must be <b>well-substantiated</b>… a candidate can score 1 or 2 marks for a response which is not well-substantiated. The interpretation must be <b>grounded in the play/poem</b>.”</p>
+    <p><b>Common mistakes:</b> listing examples with no link to the theme; making a general claim with no text reference; writing one long example instead of two or three.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak (1/3)</span>“Ambition is a big theme in Macbeth. Macbeth is very ambitious.”</div>
+      <div class="strong"><span class="h">✅ Full marks (3/3)</span>“Ambition drives the play. Macbeth's ambition is sparked by the witches' prophecy that he will be king, and he admits it ‘o'erleaps' itself when he murders Duncan to seize the crown. Lady Macbeth's ambition is even sharper — she calls on spirits to ‘unsex' her so she can be ruthless. Their shared ambition destroys them both.”</div>
+    </div>
+  </div>
+
+  <h3>How to answer “Discuss your view” (3 marks, open-ended)</h3>
+  <div class="qa-block">
+    <p><b>What the examiner wants:</b> a <b>reasoned position</b> (yes or no), supported by 2–3 points from the whole text. The memo gives both a “Yes” list and a “No” list and accepts <b>either</b> — or a combination.</p>
+    <p><b>Approach:</b> take a clear stand, then support it with 2–3 points. You may also acknowledge the other side (“However…”).</p>
+    <p><b>Earns full marks:</b> memo note: “Do NOT award a mark for YES or NO. Credit responses where a combination is given. For full marks, well-substantiated. 1 or 2 marks if not. Must be <b>grounded in the text</b>.”</p>
+    <p><b>Common mistakes:</b> writing “Yes” with no reason; giving your personal opinion with no text reference; changing your position halfway; forgetting the “as a whole” instruction and staying inside the extract only.</p>
+    <div class="vs">
+      <div class="weak"><span class="h">❌ Weak (0–1/3)</span>“Yes, I agree that Duncan is a good leader. He is nice.”</div>
+      <div class="strong"><span class="h">✅ Full marks (3/3)</span>“Yes, Duncan is a good leader. He is decisive — he strips the traitor Cawdor of his title and gives it to Macbeth. He recognises bravery and rewards Macbeth and Banquo for their victory over Norway. However, his trust is his flaw, since he misjudges Macbeth and is murdered in his sleep.”</div>
+    </div>
+  </div>
+</section>
+<!-- ============ POETRY THEORY ============ -->
+<section id="poetry-theory">
+  <div class="sec-head"><h2>📖 Poetry — Complete Literary Theory</h2></div>
+  <p class="lead">Every device below follows the same five-part pattern: <b>definition → simple example → effect → how it's examined → how to discuss it for marks</b>. The “how it's examined” notes are drawn from real FAL questions and memos.</p>
+
+  <div class="callout gold">
+    <span class="t">⚡ The number-one poetry skill in FAL</span>
+    FAL poetry questions are <b>line-anchored</b> — nearly every question says “Refer to line X.” Your job is always the same: name the device/meaning, then explain what it <em>does</em> in <em>that line</em>. Learning a device without learning how to explain its <b>effect</b> earns you the 1 mark but loses the 2.
+  </div>
+
+  <h3>Figurative language (imagery &amp; comparison)</h3>
+
+  <details><summary>Metaphor</summary><div class="dbody">
+    <p><b>Definition:</b> a direct comparison that says one thing <em>is</em> another (no “like” or “as”).</p>
+    <p><b>Example:</b> “That time of year thou mayst in me behold” — the speaker <em>is</em> autumn/winter.</p>
+    <p><b>Effect:</b> creates a vivid, layered image; links the abstract to the concrete; conveys complex emotion economically.</p>
+    <p><b>How examined:</b> “Identify the figure of speech (1) + explain its relevance (2).” The memo expects “In the same way that X…, so too Y…”</p>
+    <p><b>Discuss it:</b> “The speaker is a metaphor for [X]: just as [literal image], so too [deeper meaning]. This shows…”</p>
+  </div></details>
+
+  <details><summary>Simile</summary><div class="dbody">
+    <p><b>Definition:</b> an explicit comparison using “like” or “as”.</p>
+    <p><b>Example:</b> “his rollrock highroad roaring down” is not a simile — a true FAL example: “words hide like …” (Hard to find).</p>
+    <p><b>Effect:</b> makes the image clear and accessible; emphasises a particular quality of the thing described.</p>
+    <p><b>How examined:</b> same identify + explain format; the memo credits “Simile” as the 1-mark answer.</p>
+    <p><b>Discuss it:</b> “The simile ‘X is like Y' emphasises [quality], because Y suggests [connotation].”</p>
+  </div></details>
+
+  <details><summary>Personification</summary><div class="dbody">
+    <p><b>Definition:</b> giving human qualities, feelings or actions to a non-human thing or idea.</p>
+    <p><b>Example:</b> “It rounds and rounds <b>Despair</b> to drowning” (Inversnaid) — despair becomes a person who can drown.</p>
+    <p><b>Effect:</b> makes the abstract tangible; creates mood; can make nature/ideas feel alive and threatening or gentle.</p>
+    <p><b>How examined:</b> extremely common — the memo frequently accepts “Metaphor/Personification” together as valid answers.</p>
+    <p><b>Discuss it:</b> “X is personified as [human action], which makes it feel [adjective], creating a [mood] atmosphere.”</p>
+  </div></details>
+
+  <details><summary>Imagery</summary><div class="dbody">
+    <p><b>Definition:</b> language that appeals to the senses (sight, sound, touch, taste, smell) to build a mental picture.</p>
+    <p><b>Example:</b> “yellow leaves, or none, or few, do hang” — visual imagery of a bare autumn tree.</p>
+    <p><b>Effect:</b> makes the scene concrete and emotional; sets mood; often the vehicle for a deeper theme.</p>
+    <p><b>How examined:</b> usually as part of “describe the atmosphere/setting” or theme questions — you explain what the images convey.</p>
+    <p><b>Discuss it:</b> “The image of [X] appeals to the sense of [sight/hearing…] and creates a [adjective] mood, suggesting [theme].”</p>
+  </div></details>
+
+  <details><summary>Symbolism</summary><div class="dbody">
+    <p><b>Definition:</b> an object, person or event that stands for a larger idea beyond itself.</p>
+    <p><b>Example:</b> in Sonnet 73, the “twilight”/“black night” symbolise approaching death.</p>
+    <p><b>Effect:</b> layers meaning; lets the poet discuss big ideas (death, love, freedom) through small concrete things.</p>
+    <p><b>How examined:</b> “To what does X refer?” / “What does X symbolise?” — you name the bigger idea it stands for.</p>
+    <p><b>Discuss it:</b> “X is a symbol of [idea], because [link], so it reinforces the theme of [theme].”</p>
+  </div></details>
+
+  <details><summary>Irony</summary><div class="dbody">
+    <p><b>Definition:</b> a gap between appearance and reality, or between what is said and what is meant/true.</p>
+    <p><b>Example:</b> “Long live the weeds and the wilderness yet” — blessing “weeds” (usually unwanted) as precious.</p>
+    <p><b>Effect:</b> creates surprise, criticism, or emotional depth; reveals a truth the surface hides.</p>
+    <p><b>How examined:</b> “Explain the irony in…” — the single most reliable 2-mark question in FAL poetry and Macbeth.</p>
+    <p><b>Discuss it:</b> “It is ironic that [surface expectation], because in reality [opposite].”</p>
+  </div></details>
+
+  <h3>Sound devices</h3>
+
+  <details><summary>Alliteration</summary><div class="dbody">
+    <p><b>Definition:</b> repetition of the same consonant sound at the start of nearby words.</p>
+    <p><b>Example:</b> “rollrock highroad roaring” (Inversnaid).</p>
+    <p><b>Effect:</b> draws attention to the words; can echo the sound described (e.g. water's rush) and build rhythm/mood.</p>
+    <p><b>How examined:</b> the 2025 paper's “Replace the underlined word” question swapped <em>assonance</em> for <em>alliteration</em> — you must know which is which.</p>
+    <p><b>Discuss it:</b> “The alliteration of the [sound] in ‘…' mimics [the thing described] and emphasises [effect].”</p>
+  </div></details>
+
+  <details><summary>Assonance</summary><div class="dbody">
+    <p><b>Definition:</b> repetition of a vowel sound within words (not necessarily at the start).</p>
+    <p><b>Example:</b> “flutes and low to the lake falls home” — the long “o” sounds.</p>
+    <p><b>Effect:</b> creates internal music; slows or smooths the line; reinforces mood.</p>
+    <p><b>How examined:</b> tested as a distractor vs alliteration — know that alliteration = consonants, assonance = vowels.</p>
+    <p><b>Discuss it:</b> “The repeated [vowel] sound (‘…') slows the line and creates a [adjective] effect.”</p>
+  </div></details>
+
+  <details><summary>Onomatopoeia</summary><div class="dbody">
+    <p><b>Definition:</b> a word whose sound imitates its meaning.</p>
+    <p><b>Example:</b> “roaring”, “shriek” — the 2023 memo credited “onomatopoeia” in Innisfree.</p>
+    <p><b>Effect:</b> makes the scene audible and immediate; energises the description.</p>
+    <p><b>How examined:</b> often an acceptable answer in “identify the sound device” questions.</p>
+    <p><b>Discuss it:</b> “The word ‘X' is onomatopoeic — it reproduces the sound of [thing], making the image vivid.”</p>
+  </div></details>
+
+  <h3>Structure, form &amp; voice</h3>
+
+  <details><summary>Rhyme &amp; rhyme scheme</summary><div class="dbody">
+    <p><b>Definition:</b> matching end-sounds between lines; the pattern is labelled with letters (aabb, abab, etc.).</p>
+    <p><b>Example:</b> Inversnaid is rhymed <b>aabb ccdd</b> — the 2025 fill-in question literally asked for this.</p>
+    <p><b>Effect:</b> creates musicality and unity; a regular scheme can feel calm/ordered; broken rhyme can feel uneasy.</p>
+    <p><b>How examined:</b> the structural 4-mark question (fill-in / matching) asks you to name <b>stanza, quatrain, couplet, rhyme scheme</b>.</p>
+    <p><b>Discuss it:</b> “The regular aabb rhyme creates a sing-song, contained feel that mirrors [theme].”</p>
+  </div></details>
+
+  <details><summary>Rhythm &amp; metre</summary><div class="dbody">
+    <p><b>Definition:</b> the pattern of stressed and unstressed syllables (the “beat”). Iambic pentameter = 5 pairs of unstressed–stressed.</p>
+    <p><b>Example:</b> Shakespeare's sonnets use iambic pentameter.</p>
+    <p><b>Effect:</b> a steady rhythm feels natural and speech-like; a broken rhythm signals emotion or chaos.</p>
+    <p><b>How examined:</b> rarely asked by name in FAL; more often folded into “mood” and “how the poem sounds”.</p>
+    <p><b>Discuss it:</b> “The flowing rhythm mirrors the stream's movement / the speaker's calm.”</p>
+  </div></details>
+
+  <details><summary>Enjambment</summary><div class="dbody">
+    <p><b>Definition:</b> a sentence running over a line break without punctuation (the thought continues).</p>
+    <p><b>Example:</b> “It drops from the gory lash, / As I whirled it o'er and o'er my head” (The slave dealer).</p>
+    <p><b>Effect:</b> creates forward motion, urgency, or a conversational flow; can mirror a rushing or unstoppable action.</p>
+    <p><b>How examined:</b> asked when a question focuses on pace/movement; credit for noticing the run-on.</p>
+    <p><b>Discuss it:</b> “The enjambment makes the lines run on, mirroring the speaker's unstoppable [emotion/action].”</p>
+  </div></details>
+
+  <details><summary>Caesura</summary><div class="dbody">
+    <p><b>Definition:</b> a strong pause <em>inside</em> a line, usually marked by punctuation ( . , ; : — ).</p>
+    <p><b>Example:</b> “Let them be left, O let them be left, wildness and wet.”</p>
+    <p><b>Effect:</b> creates a dramatic halt, emphasis, or a reflective, hesitant tone.</p>
+    <p><b>How examined:</b> occasionally; credit for linking the pause to a shift in feeling or a key idea.</p>
+    <p><b>Discuss it:</b> “The caesura after ‘X' forces a pause that emphasises [word/idea].”</p>
+  </div></details>
+
+  <details><summary>Repetition / Refrain</summary><div class="dbody">
+    <p><b>Definition:</b> repeating a word, phrase or line for emphasis or structure.</p>
+    <p><b>Example:</b> “O let them be left, wildness and wet” — the plea is repeated.</p>
+    <p><b>Effect:</b> reinforces an idea or emotion; creates rhythm; can sound like a prayer, plea or obsession.</p>
+    <p><b>How examined:</b> “Why does the speaker repeat X?” — you explain the emphasis/emotion it creates.</p>
+    <p><b>Discuss it:</b> “The repetition of ‘X' underlines the speaker's [emotion], as if he is pleading/insisting.”</p>
+  </div></details>
+
+  <details><summary>Diction &amp; word choice</summary><div class="dbody">
+    <p><b>Definition:</b> the poet's deliberate choice of words and their <b>connotations</b> (emotional associations).</p>
+    <p><b>Example:</b> “darksome”, “pitchblack”, “féll-frówning” — ominous, heavy diction in Inversnaid.</p>
+    <p><b>Effect:</b> shapes tone and mood; single words carry the poem's feeling.</p>
+    <p><b>How examined:</b> “What do these words suggest / reveal?” — you explain what the chosen word implies.</p>
+    <p><b>Discuss it:</b> “The word ‘X' has connotations of [idea], which creates a [adjective] tone.”</p>
+  </div></details>
+
+  <h3>Meaning &amp; feeling</h3>
+
+  <details><summary>Tone</summary><div class="dbody">
+    <p><b>Definition:</b> the speaker's attitude/feeling (angry, nostalgic, pleading, ironic…).</p>
+    <p><b>Example:</b> Sonnet 73's closing tone is urgent/pleading — “love that well which thou must leave ere long.”</p>
+    <p><b>Effect:</b> reveals the speaker's emotion; the exam's tone question is always “what tone + why”.</p>
+    <p><b>How examined:</b> “(a) What tone would the speaker use? (b) Why?” — 1 + 1 marks, in every paper.</p>
+    <p><b>Discuss it:</b> “The tone is [adjective], because the speaker [reason].”</p>
+  </div></details>
+
+  <details><summary>Mood / Atmosphere</summary><div class="dbody">
+    <p><b>Definition:</b> the feeling the reader gets (tense, peaceful, ominous). <b>Tone = speaker's feeling; mood = reader's feeling.</b></p>
+    <p><b>Example:</b> Inversnaid's pitchblack pool creates an ominous mood.</p>
+    <p><b>Effect:</b> pulls the reader into the scene; the “atmosphere” question rewards naming mood + the words that create it.</p>
+    <p><b>How examined:</b> “The descriptive words create a [peaceful/tense] atmosphere. Discuss your view.” — 3 marks.</p>
+    <p><b>Discuss it:</b> “The mood is [adjective], created by [images/words], because they suggest [idea].”</p>
+  </div></details>
+
+  <details><summary>Theme</summary><div class="dbody">
+    <p><b>Definition:</b> the central idea or message (love, death, nature, guilt, aging).</p>
+    <p><b>Example:</b> Sonnet 73 — aging and the urgency of love; Inversnaid — the value of wild nature.</p>
+    <p><b>Effect:</b> the poem's “point” — every theme question wants 2–3 supported examples.</p>
+    <p><b>How examined:</b> “One of the themes is X. Discuss this theme.” — 3 marks, every paper.</p>
+    <p><b>Discuss it:</b> “The theme of [X] is developed through [example 1], [example 2] and [example 3].”</p>
+  </div></details>
+
+  <details><summary>Literal vs figurative meaning</summary><div class="dbody">
+    <p><b>Definition:</b> <b>literal</b> = the surface, dictionary meaning; <b>figurative</b> = the deeper, non-literal meaning.</p>
+    <p><b>Example:</b> “That time of year” literally = a season; figuratively = the speaker's old age.</p>
+    <p><b>Effect:</b> poems work on two levels; the exam tests that you can see both.</p>
+    <p><b>How examined:</b> “Explain the literal meaning” then “the figurative meaning” — 2021 &amp; 2022 asked this explicitly.</p>
+    <p><b>Discuss it:</b> “Literally, X means [surface]. Figuratively, it means [deeper idea].”</p>
+  </div></details>
+
+  <details><summary>Speaker vs poet</summary><div class="dbody">
+    <p><b>Definition:</b> the <b>speaker</b> is the voice in the poem (a persona); the <b>poet</b> is the author. They are not the same.</p>
+    <p><b>Example:</b> the speaker in “The slave dealer” is the guilt-ridden trader — not Thomas Pringle himself.</p>
+    <p><b>Effect:</b> recognising the persona lets you discuss “the speaker's” feelings accurately (the exam always says “the speaker”).</p>
+    <p><b>How examined:</b> “What does this reveal about the speaker's character?” — answer about the persona, not the poet.</p>
+    <p><b>Discuss it:</b> “The speaker feels [X]…”, never “the poet feels…”.</p>
+  </div></details>
+</section>
+<!-- ============ MACBETH THEORY ============ -->
+<section id="macbeth-theory">
+  <div class="sec-head"><h2>🎭 Macbeth — Dramatic Techniques &amp; Theory</h2></div>
+  <p class="lead">Macbeth questions test the same literary skills as poetry, plus the specifically <b>dramatic</b> devices. Knowing these lets you answer the “identify + explain” and “director” questions that appear in every paper.</p>
+
+  <details><summary>Dramatic irony</summary><div class="dbody">
+    <p><b>Definition:</b> the audience knows something a character does not, making the character's words/actions carry a deeper, often painful meaning.</p>
+    <p><b>Example:</b> Duncan praises Macbeth's castle as a “pleasant seat” while the audience knows Macbeth is about to murder him there.</p>
+    <p><b>Effect:</b> builds tension and dread; makes the audience feel the tragedy coming.</p>
+    <p><b>How examined:</b> “Explain the irony in [X]'s words…” is the most common Macbeth 2-mark question — in every paper.</p>
+    <p><b>Discuss it:</b> “It is dramatically ironic that [X] says ‘…', because the audience already knows [truth].”</p>
+  </div></details>
+
+  <details><summary>Soliloquy</summary><div class="dbody">
+    <p><b>Definition:</b> a speech delivered by a character <b>alone on stage</b>, revealing their private thoughts to the audience.</p>
+    <p><b>Example:</b> “Is this a dagger which I see before me?” (Act 2 Sc 1); “Tomorrow, and tomorrow, and tomorrow…” (Act 5 Sc 5).</p>
+    <p><b>Effect:</b> gives direct access to a character's inner conflict, ambition, guilt — the audience sees the truth the other characters can't.</p>
+    <p><b>How examined:</b> often the extract chosen; questions ask what the soliloquy reveals about the character's <b>state of mind</b>.</p>
+    <p><b>Discuss it:</b> “In this soliloquy Macbeth reveals his [emotion] — the audience sees [private thought] that he hides from others.”</p>
+  </div></details>
+
+  <details><summary>Aside</summary><div class="dbody">
+    <p><b>Definition:</b> a short remark a character speaks to the audience (or to themselves) that other characters on stage are not meant to hear.</p>
+    <p><b>Example:</b> Macbeth's “(aside) Time, thou anticipatest my dread exploits” (Act 4 Sc 1) — his private plan, hidden from Lennox.</p>
+    <p><b>Effect:</b> reveals a character's true intentions while others remain unaware; creates dramatic irony.</p>
+    <p><b>How examined:</b> the 2025 paper's extract literally carried the stage direction “(aside)” — questions ask what it reveals about his thoughts.</p>
+    <p><b>Discuss it:</b> “Macbeth's aside reveals his [intention] — the audience knows his true plan while [other character] does not.”</p>
+  </div></details>
+
+  <details><summary>Monologue vs soliloquy vs aside</summary><div class="dbody">
+    <p><b>Definition:</b> a <b>monologue</b> is a long speech to others on stage; a <b>soliloquy</b> is spoken alone (private thoughts); an <b>aside</b> is a brief secret remark to the audience.</p>
+    <p><b>Example:</b> Macbeth's “Tomorrow…” is a soliloquy; his banquet speeches are monologues; his “(aside)” in Act 4 is an aside.</p>
+    <p><b>Effect:</b> each controls how much truth the audience and characters share — the engine of dramatic irony.</p>
+    <p><b>How examined:</b> knowing the difference prevents mislabelling in “identify the device” questions.</p>
+    <p><b>Discuss it:</b> name the correct form, then say what private truth it exposes.</p>
+  </div></details>
+
+  <details><summary>Symbolism</summary><div class="dbody">
+    <p><b>Definition:</b> objects/events that stand for bigger ideas. Key symbols: <b>blood</b> (guilt), <b>darkness/night</b> (evil), <b>the dagger</b> (murderous intent), <b>sleep</b> (innocence/peace), <b>the witches</b> (chaos/evil), <b>Birnam Wood</b> (nature avenging Duncan).</p>
+    <p><b>Example:</b> Lady Macbeth's “Out, damned spot!” — the imaginary blood that symbolises her permanent guilt.</p>
+    <p><b>Effect:</b> turns abstract ideas (guilt, ambition) into visible images; unifies the play.</p>
+    <p><b>How examined:</b> “Explain what X means/symbolises” — you name the abstract idea behind the image.</p>
+    <p><b>Discuss it:</b> “The recurring image of [blood/sleep/darkness] symbolises [guilt/innocence/evil], showing [theme].”</p>
+  </div></details>
+
+  <details><summary>Imagery</summary><div class="dbody">
+    <p><b>Definition:</b> vivid sensory language. Macbeth's dominant images: blood, darkness, clothing (“borrowed robes”), animals, disease/medicine.</p>
+    <p><b>Example:</b> “Will all great Neptune's ocean wash this blood clean from my hand?” — visual, overwhelming blood imagery.</p>
+    <p><b>Effect:</b> makes guilt/ambition physically felt; the imagery <em>is</em> the theme made visible.</p>
+    <p><b>How examined:</b> theme questions reward citing imagery as evidence (e.g. the blood image as proof of the theme of guilt).</p>
+    <p><b>Discuss it:</b> “The image of [X] creates a sense of [mood] and reinforces the theme of [theme].”</p>
+  </div></details>
+
+  <details><summary>Motif</summary><div class="dbody">
+    <p><b>Definition:</b> a repeated image, idea or pattern that recurs through the play (blood, sleep, darkness, unnatural events, “manhood”).</p>
+    <p><b>Example:</b> the motif of sleep — Macbeth “murders sleep” and Lady Macbeth sleepwalks.</p>
+    <p><b>Effect:</b> repetition builds meaning; tracks a theme's development from start to end.</p>
+    <p><b>How examined:</b> theme and “whole play” questions reward tracing a motif across scenes.</p>
+    <p><b>Discuss it:</b> “The motif of [X] recurs when [scene 1] and again when [scene 2], charting [development].”</p>
+  </div></details>
+
+  <details><summary>Foreshadowing</summary><div class="dbody">
+    <p><b>Definition:</b> hints or warnings of events to come.</p>
+    <p><b>Example:</b> the witches' prophecies; Duncan's remark that “There's no art to find the mind's construction in the face” (foreshadowing his betrayal).</p>
+    <p><b>Effect:</b> creates anticipation and dread; makes later events feel inevitable.</p>
+    <p><b>How examined:</b> “In stanza 1 the reader is prepared for later events” — the same idea applies to Macbeth scenes; questions ask what a line hints at.</p>
+    <p><b>Discuss it:</b> “This foreshadows [later event] — the audience is warned that [outcome] is coming.”</p>
+  </div></details>
+
+  <details><summary>Conflict</summary><div class="dbody">
+    <p><b>Definition:</b> the struggle that drives the plot. <b>External</b> conflict (Macbeth vs Macduff, vs Duncan, vs Malcolm's army); <b>internal</b> conflict (Macbeth's ambition vs his conscience).</p>
+    <p><b>Example:</b> Macbeth's dagger soliloquy is pure internal conflict — he wants the crown but recoils from murder.</p>
+    <p><b>Effect:</b> creates tension and reveals character; the play's engine.</p>
+    <p><b>How examined:</b> “The conflict between Macbeth and Macduff is necessary in the play. Discuss your view.” — a real 3-mark question (2025).</p>
+    <p><b>Discuss it:</b> name the type of conflict, the two sides, and what it drives the character to do.</p>
+  </div></details>
+
+  <details><summary>Dramatic tension</summary><div class="dbody">
+    <p><b>Definition:</b> the suspense the audience feels as danger/outcome approaches.</p>
+    <p><b>Example:</b> the knocking at the gate after Duncan's murder (Act 2 Sc 2–3) — tension while the Macbeths try to cover their guilt.</p>
+    <p><b>Effect:</b> keeps the audience gripped; makes scenes feel urgent.</p>
+    <p><b>How examined:</b> folded into “mood/tone” and “director” questions — what action/tone heightens the tension.</p>
+    <p><b>Discuss it:</b> “The tension rises when [event], because the audience fears [outcome].”</p>
+  </div></details>
+
+  <details><summary>Stage directions &amp; the “director” lens</summary><div class="dbody">
+    <p><b>Definition:</b> instructions for actors (entrances, exits, actions, sounds like “Alarums”, “Knocking within”).</p>
+    <p><b>Example:</b> “A bell rings” before the murder; “Enter the Ghost of Banquo.”</p>
+    <p><b>Effect:</b> control pacing, sound and atmosphere — exactly what the director question tests.</p>
+    <p><b>How examined:</b> “If you were the director, what would you tell [X] to do? State TWO actions.” — in every paper.</p>
+    <p><b>Discuss it:</b> always answer with two physical, stageable actions (gesture, movement, delivery).</p>
+  </div></details>
+
+  <details><summary>Blank verse vs prose</summary><div class="dbody">
+    <p><b>Definition:</b> <b>blank verse</b> = unrhymed iambic pentameter (the nobles' normal speech); <b>prose</b> = ordinary non-metrical speech (often used by the Porter, or to mark madness/chaos).</p>
+    <p><b>Example:</b> the Porter's scene is prose; Macbeth's soliloquies are blank verse.</p>
+    <p><b>Effect:</b> the shift signals status or a break in order; prose often accompanies comic relief or disorder.</p>
+    <p><b>How examined:</b> rarely named in FAL, but useful context for “structure” answers.</p>
+    <p><b>Discuss it:</b> note when a character drops from verse to prose — it marks a shift in state or order.</p>
+  </div></details>
+
+  <details><summary>Characterisation</summary><div class="dbody">
+    <p><b>Definition:</b> how Shakespeare builds characters — through their words, actions, what others say, and their development.</p>
+    <p><b>Example:</b> Lady Macbeth is built first as ruthless (“unsex me here”), then collapses into guilt-driven madness.</p>
+    <p><b>Effect:</b> characters change over the play — the exam rewards tracking that <b>development</b>.</p>
+    <p><b>How examined:</b> “What does this reveal about [X]'s character?” — trait + substantiation, in every paper.</p>
+    <p><b>Discuss it:</b> “At first [X] is [trait], shown by [evidence], but later becomes [trait], shown by [evidence].”</p>
+  </div></details>
+</section>
+<!-- ============ MACBETH REVISION ============ -->
+<section id="macbeth-revision">
+  <div class="sec-head"><h2>👑 Macbeth — Complete Revision Guide</h2></div>
+  <p class="lead">Everything examinable, organised for the way the paper actually tests it: <b>characters → themes → key scenes → quotes</b>. The contextual question gives you two extracts, but the 3-mark “whole play” questions demand knowledge of the <b>entire play</b>, so study all of it.</p>
+
+  <h3>The story in one paragraph (know this cold)</h3>
+  <div class="card">
+    <p style="margin:0">After two Scottish generals, <b>Macbeth</b> and <b>Banquo</b>, defeat the rebel Macdonwald and the invading Norwegians, three <b>witches</b> prophesy that Macbeth will become <b>Thane of Cawdor</b> and then <b>King</b>, and that Banquo's descendants will be kings. When Macbeth is made Thane of Cawdor, the first prophecy comes true and his ambition ignites. Spurred by his wife <b>Lady Macbeth</b>, he murders King <b>Duncan</b> and seizes the throne. Wracked by paranoia, he orders the deaths of Banquo and the family of <b>Macduff</b>. Lady Macbeth descends into guilt-driven madness and dies. Macduff and Duncan's son <b>Malcolm</b> raise an English army, march on Dunsinane hidden by branches from <b>Birnam Wood</b>, and Macduff — “not of woman born” — kills Macbeth. Malcolm is crowned, restoring order.</p>
+  </div>
+
+  <h3>Characters &amp; their development</h3>
+
+  <details><summary>Macbeth — the tragic hero</summary><div class="dbody">
+    <p><b>Who he is:</b> a brave, loyal Scottish general who is corrupted by ambition into a tyrant.</p>
+    <p><b>Development:</b> (1) honoured warrior praised by Duncan → (2) tempted by the witches' prophecy and his own “black and deep desires” → (3) murders Duncan, then Banquo, then Macduff's family → (4) becomes paranoid and isolated → (5) fights to the end, still clinging to the witches' prophecy, and is killed.</p>
+    <p><b>Key traits:</b> ambitious, brave but weak-willed, guilt-ridden, increasingly cruel and paranoid.</p>
+    <p><b>Key quotes:</b> “Stars, hide your fires; Let not light see my black and deep desires” (Act 1); “Is this a dagger which I see before me?” (Act 2); “To be thus is nothing, but to be safely thus” (Act 3); “Tomorrow, and tomorrow, and tomorrow…” (Act 5).</p>
+    <p><b>How examined:</b> “Discuss your view” statements like “Macbeth is a tragic hero” or “Macbeth is a victim of the witches” — you argue with 2–3 supported points.</p>
+  </div></details>
+
+  <details><summary>Lady Macbeth — ambition's sharpest edge</summary><div class="dbody">
+    <p><b>Who she is:</b> Macbeth's wife, whose ruthless ambition drives the murder of Duncan.</p>
+    <p><b>Development:</b> (1) the stronger, colder partner who plans the murder and steels Macbeth (“screw your courage to the sticking-place”) → (2) covers for him at the banquet when he sees Banquo's ghost → (3) collapses under guilt into sleepwalking, endlessly washing imaginary blood → (4) dies, apparently by suicide.</p>
+    <p><b>Key traits:</b> manipulative, ambitious, outwardly strong but inwardly fragile; her fall mirrors Macbeth's.</p>
+    <p><b>Key quotes:</b> “Come, you spirits… unsex me here” (Act 1); “A little water clears us of this deed” (Act 2); “Out, damned spot! out, I say!” (Act 5).</p>
+    <p><b>How examined:</b> character-reveal questions; the irony of “a little water clears us” vs her later “all the perfumes of Arabia”.</p>
+  </div></details>
+
+  <details><summary>King Duncan — the good king</summary><div class="dbody">
+    <p><b>Who he is:</b> the virtuous, trusting King of Scotland whose murder throws the country into chaos.</p>
+    <p><b>Key traits:</b> gracious, generous, just — but fatally trusting (he misreads both the traitor Cawdor and Macbeth).</p>
+    <p><b>Key quotes:</b> “There's no art to find the mind's construction in the face” (Act 1 — irony: he says this about the traitor Cawdor, then is betrayed again by Macbeth).</p>
+    <p><b>How examined:</b> “Duncan is a good leader. Discuss your view.” (2025) — argue yes (decisive, rewarding) and/or no (too trusting).</p>
+  </div></details>
+
+  <details><summary>Banquo — the honourable foil</summary><div class="dbody">
+    <p><b>Who he is:</b> Macbeth's fellow general; the witches say his descendants, not he, will be kings.</p>
+    <p><b>Key traits:</b> noble, cautious, suspicious of the witches (“The instruments of darkness tell us truths… to win us to our harm”).</p>
+    <p><b>Development:</b> resists temptation; Macbeth, threatened by the prophecy about Banquo's line, has him murdered — but Banquo's son <b>Fleance</b> escapes.</p>
+    <p><b>How examined:</b> character-reveal and irony questions; his ghost returning at the banquet is a favourite extract.</p>
+  </div></details>
+
+  <details><summary>Macduff — the avenger</summary><div class="dbody">
+    <p><b>Who he is:</b> the loyal Thane of Fife who discovers Duncan's body and ultimately kills Macbeth.</p>
+    <p><b>Key traits:</b> loyal, honest, grief-stricken but just; the one “not of woman born” (born by caesarean).</p>
+    <p><b>Development:</b> flees to England to raise Malcolm's army; when Macbeth slaughters his wife and children, his grief (“All my pretty ones?”) steels his revenge.</p>
+    <p><b>Key quotes:</b> “He has no children” (Act 4); “Turn, hell-hound, turn!” (Act 5).</p>
+    <p><b>How examined:</b> “The conflict between Macbeth and Macduff is necessary. Discuss.” (2025) — his revenge is the play's resolution.</p>
+  </div></details>
+
+  <details><summary>Malcolm — the rightful king</summary><div class="dbody">
+    <p><b>Who he is:</b> Duncan's elder son and heir.</p>
+    <p><b>Key traits:</b> cautious (flees to England), wise (tests Macduff's loyalty with a false confession of vices), a healer-figure who restores order.</p>
+    <p><b>Development:</b> from frightened prince to the leader who retakes Scotland and becomes king.</p>
+    <p><b>How examined:</b> the “order restored” theme; his testing of Macduff shows wisdom vs Macbeth's rashness.</p>
+  </div></details>
+
+  <details><summary>The Witches (Weird Sisters)</summary><div class="dbody">
+    <p><b>Who they are:</b> supernatural agents of chaos who tempt Macbeth with half-truths.</p>
+    <p><b>Key traits:</b> ambiguous, manipulative; they “lie like truth” — technically true prophecies that mislead.</p>
+    <p><b>Key quotes:</b> “Fair is foul, and foul is fair” (Act 1 — the play's moral inversion); “none of woman born shall harm Macbeth” (Act 4).</p>
+    <p><b>How examined:</b> “The witches are to blame for the chaos in Scotland. Discuss your view.” (2025) — argue blame vs Macbeth's own choice.</p>
+  </div></details>
+
+  <details><summary>Minor characters (the matching question loves these)</summary><div class="dbody">
+    <p><b>Ross:</b> the messenger/nobleman who reports events (battle, the “unnatural” horses).</p>
+    <p><b>Fleance:</b> Banquo's son, who escapes — his survival means Banquo's line may yet be kings.</p>
+    <p><b>Young Siward:</b> English general's son, killed by Macbeth — his father accepts the honourable death.</p>
+    <p><b>The Doctor:</b> attends Lady Macbeth; “Were I from Dunsinane away and clear, profit again should hardly draw me here” — a witness to the corruption.</p>
+    <p><b>The Porter:</b> comic relief (drunken gatekeeper) that follows the murder with dark humour.</p>
+    <p><b>How examined:</b> the 4-mark Column A→B matching question (3.1.1) tests exactly these identifications every year.</p>
+  </div></details>
+
+  <h3>Major themes &amp; how they develop</h3>
+
+  <details><summary>Ambition</summary><div class="dbody">
+    <p><b>The idea:</b> unchecked ambition corrupts and destroys. Macbeth's ambition is awakened by the prophecy and Lady Macbeth; it “o'erleaps itself” into murder, then more murder to hold power, until it destroys him.</p>
+    <p><b>Evidence:</b> Macbeth's “vaulting ambition”; Lady Macbeth's “unsex me”; Banquo's resistance as the contrast.</p>
+    <p><b>How examined:</b> “One of the themes is ambition. Discuss this theme.” — cite the prophecy, the murder, and the tyrant's paranoia.</p>
+  </div></details>
+
+  <details><summary>Guilt &amp; conscience</summary><div class="dbody">
+    <p><b>The idea:</b> evil deeds cannot be washed clean. Guilt appears as blood and sleeplessness.</p>
+    <p><b>Evidence:</b> “Macbeth doth murder sleep”; “Will all great Neptune's ocean wash this blood clean?”; Lady Macbeth's “Out, damned spot!” sleepwalking.</p>
+    <p><b>How examined:</b> symbolism/irony questions (the blood image; “a little water clears us of this deed” vs her madness).</p>
+  </div></details>
+
+  <details><summary>Appearance vs reality / deception</summary><div class="dbody">
+    <p><b>The idea:</b> “Fair is foul, and foul is fair” — things are not what they seem.</p>
+    <p><b>Evidence:</b> the Macbeths' welcoming faces vs murderous intent; Duncan's inability to “find the mind's construction in the face”; the witches' half-truths.</p>
+    <p><b>How examined:</b> irony questions are essentially this theme — always link “what seems” vs “what is”.</p>
+  </div></details>
+
+  <details><summary>Order vs chaos / the natural order</summary><div class="dbody">
+    <p><b>The idea:</b> the King is divinely appointed; killing him plunges nature itself into chaos.</p>
+    <p><b>Evidence:</b> unnatural events after Duncan's murder — horses eating each other, darkness at noon, an owl killing a falcon (Act 2 Sc 4).</p>
+    <p><b>How examined:</b> “why is the following statement FALSE / theme of order” — the chaos is the proof of the crime against nature.</p>
+  </div></details>
+
+  <details><summary>Manhood / masculinity</summary><div class="dbody">
+    <p><b>The idea:</b> what it means to be a man. Lady Macbeth equates manhood with violence (“When you durst do it, then you were a man”); Macduff redefines it as the courage to <em>feel</em> grief (“I must also feel it as a man”).</p>
+    <p><b>Evidence:</b> the “manhood” challenge (Act 1 Sc 7); Macduff's grief (Act 4 Sc 3).</p>
+    <p><b>How examined:</b> “One of the themes is manhood” — 2024 asked this explicitly.</p>
+  </div></details>
+
+  <details><summary>Loyalty &amp; kingship</summary><div class="dbody">
+    <p><b>The idea:</b> true loyalty (Banquo, Macduff, Malcolm) contrasts with treachery (Cawdor, Macbeth). A good king (Duncan, Malcolm) is just and orderly; a tyrant (Macbeth) rules by fear.</p>
+    <p><b>Evidence:</b> Macduff's loyalty to Scotland over Macbeth; Malcolm's testing of Macduff; the play ends with order restored under Malcolm.</p>
+    <p><b>How examined:</b> “Duncan is a good leader” / “good ultimately triumphs over evil” (2022) — argument questions.</p>
+  </div></details>
+
+  <details><summary>Fate vs free will</summary><div class="dbody">
+    <p><b>The idea:</b> do the witches cause Macbeth's fall, or does he choose it? The play leans to <b>choice</b>: Macbeth hears the prophecy but decides to act on it, and the witches' “none of woman born” is a trap he walks into.</p>
+    <p><b>Evidence:</b> Banquo hears the same prophecies but resists; Macbeth “wouldst not play false, and yet wouldst wrongly win.”</p>
+    <p><b>How examined:</b> “The witches are to blame for the chaos. Discuss your view.” (2025) — the classic version of this theme.</p>
+  </div></details>
+
+  <h3>Key scenes you must know</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Scene</th><th>What happens</th><th>Why it's tested</th></tr></thead>
+    <tbody>
+      <tr><td><b>Act 1 Sc 1–3</b></td><td>Witches' “Fair is foul”; the prophecies to Macbeth &amp; Banquo; Macbeth made Thane of Cawdor</td><td>Sets the theme of deception; the moment ambition ignites</td></tr>
+      <tr><td><b>Act 1 Sc 5–7</b></td><td>Lady Macbeth reads the letter, plots; the “manhood” challenge; “If it were done when 'tis done”</td><td>Lady Macbeth's ruthlessness; Macbeth's inner conflict</td></tr>
+      <tr><td><b>Act 2 Sc 1–2</b></td><td>The dagger soliloquy; the murder of Duncan; “Macbeth doth murder sleep”</td><td>Most-tested extract cluster (2025); guilt &amp; conscience</td></tr>
+      <tr><td><b>Act 2 Sc 3–4</b></td><td>Porter; discovery of the body; Macbeth kills the guards; the “unnatural” events</td><td>Order vs chaos (2022 extract)</td></tr>
+      <tr><td><b>Act 3 Sc 1–4</b></td><td>Banquo murdered, Fleance escapes; Banquo's ghost at the banquet</td><td>Paranoia &amp; guilt made visible (2024 extract)</td></tr>
+      <tr><td><b>Act 4 Sc 1–3</b></td><td>Second prophecies (“none of woman born”; Birnam Wood); Macduff's family killed; Macduff's grief</td><td>The false security; Macduff's motive for revenge</td></tr>
+      <tr><td><b>Act 5</b></td><td>Lady Macbeth's sleepwalking and death; “Tomorrow…” soliloquy; Birnam Wood marches; Macbeth killed by Macduff; Malcolm crowned</td><td><b>The most-tested act (4 of 5 years)</b> — the fall and restoration of order</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>How to answer Macbeth contextual questions (quick method)</h3>
+  <div class="card">
+    <ol style="margin:6px 0 6px 20px;padding:0">
+      <li><b>Read the extract</b> and the scene label under it — it tells you where you are in the play.</li>
+      <li><b>Anchor every answer to the line number</b> the question gives you — quote or point to it.</li>
+      <li><b>For 2-mark questions:</b> point + reason, in one sentence.</li>
+      <li><b>For “Refer to the drama as a whole”:</b> step <em>outside</em> the extract and use events from elsewhere in the play — these 3-mark questions are impossible to score on the extract alone.</li>
+      <li><b>For “Discuss your view”:</b> take a side, then give 2–3 supported points (a mix is even stronger).</li>
+      <li><b>Director questions:</b> two physical actions, never feelings.</li>
+    </ol>
+  </div>
+</section>
+<!-- ============ PREDICTIONS ============ -->
+<section id="predictions">
+  <div class="sec-head"><h2>🔮 Predictions — Based on 5 Years of Evidence</h2></div>
+  <p class="lead">These are <b>structural</b> predictions about <em>question formats and skills</em>, never about which specific poem or extract will appear (that is unknowable and I won't pretend otherwise). Each carries a confidence tier and the evidence behind it.</p>
+
+  <div class="callout red">
+    <span class="t">⚠️ Honesty about prediction</span>
+    There is <b>no finite question bank, no 4–6 year rotation, and no “due” poem</b>. The DBE sets each paper fresh from a prescribed list. What <em>is</em> predictable is the <b>format</b>, because it has been structurally identical for five consecutive years. Revise the <b>question families</b>, not guessed poems.
+  </div>
+
+  <h3>Confidence tiers</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Tier</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge">Very high</span></td><td>Present in every one of the 5 papers — near-certain to continue.</td></tr>
+      <tr><td><span class="badge gold">High</span></td><td>Present in 4 of 5 papers — very likely to continue.</td></tr>
+      <tr><td><span class="badge red">Moderate</span></td><td>Present in 2–3 papers or clearly rising — worth preparing, less certain.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Predicted question formats</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Prediction</th><th>Confidence</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr><td><b>Two extracts (Macbeth) and two poems (Poetry), 35 marks each</b></td><td><span class="badge">Very high</span></td><td>Identical in 2021–2025; the section structure never changed.</td></tr>
+      <tr><td><b>A 4-mark Column A→B matching question opens the Macbeth extract</b></td><td><span class="badge">Very high</span></td><td>Macbeth 3.1.1 was matching in all 5 papers.</td></tr>
+      <tr><td><b>A 4-mark structural/fill-in question on a poem's form</b></td><td><span class="badge">Very high</span></td><td>Poetry 6.1.1 was fill-in (stanza/rhyme/device terms) in 2021, 2023, 2024, 2025.</td></tr>
+      <tr><td><b>Multiple-choice (A–D) and TRUE/FALSE-fix questions</b></td><td><span class="badge">Very high</span></td><td>Every paper, both sections, 1 mark each.</td></tr>
+      <tr><td><b>“Identify the figure of speech + explain its relevance”</b></td><td><span class="badge">Very high</span></td><td>Every paper, both sections (metaphor/personification/simile dominate the memos).</td></tr>
+      <tr><td><b>“Explain the irony” (2 marks)</b></td><td><span class="badge">Very high</span></td><td>Every paper; rising from 4 to 6 occurrences per paper (2021→2025).</td></tr>
+      <tr><td><b>Tone question (“what tone + why”, 1+1)</b></td><td><span class="badge">Very high</span></td><td>Every paper, both sections.</td></tr>
+      <tr><td><b>“State of mind / character reveal + substantiate”</b></td><td><span class="badge">Very high</span></td><td>Every paper — “Substantiate your answer” appears ~12× per paper.</td></tr>
+      <tr><td><b>Director question (“State TWO actions”)</b></td><td><span class="badge">Very high</span></td><td>Macbeth, exactly 2 per paper, every year.</td></tr>
+      <tr><td><b>Two 3-mark “discuss” questions per extract/poem (theme + “your view”)</b></td><td><span class="badge">Very high</span></td><td>“One of the themes…” and “Discuss your view” each appear exactly 6× per paper (once per text-set), every year.</td></tr>
+      <tr><td><b>“Change ONE word / Replace the underlined word” (TRUE-fix)</b></td><td><span class="badge gold">High</span></td><td>Absent 2021–2023, appeared 6× in both 2024 and 2025 — a clearly rising format.</td></tr>
+      <tr><td><b>“Describe the time and place / setting”</b></td><td><span class="badge">Very high</span></td><td>Exactly 6× per paper, every year (wording shifted from “setting” to “time and place” in 2023).</td></tr>
+      <tr><td><b>“State TWO points / To what does X refer”</b></td><td><span class="badge gold">High</span></td><td>Poetry, every year (5–6× per paper).</td></tr>
+      <tr><td><b>Literal vs figurative meaning (paired)</b></td><td><span class="badge red">Moderate</span></td><td>Explicit in 2021–2023, absent 2024–2025 — but the skill (two-level reading) is always tested indirectly.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Predicted skills to prioritise (in order)</h3>
+  <ol>
+    <li><b>Explaining effect, not just naming devices.</b> The 1-mark “identify” is easy; the 2-mark “explain relevance” is where marks are lost. Drill the “In the same way that X…, so too Y…” pattern.</li>
+    <li><b>Substantiation.</b> Every character/tone/view answer needs a reason attached. Practise writing “trait <em>because</em> evidence”.</li>
+    <li><b>Irony.</b> The most reliable 2-mark question; know the surface-vs-reality structure cold.</li>
+    <li><b>Theme discussion.</b> For Macbeth (ambition, guilt, appearance-vs-reality, order-vs-chaos, manhood, fate-vs-free-will) and for every prescribed poem — have 2–3 quotable examples ready per theme.</li>
+    <li><b>“Whole play / whole poem” answers.</b> The 3-mark questions explicitly say “Refer to the drama/poem as a whole” — you must draw on events beyond the extract.</li>
+    <li><b>Precision over padding.</b> 1-mark = one word; 2-mark = one sentence; 3-mark = a tight paragraph. Over-writing wastes the 75 minutes and doesn't earn extra.</li>
+  </ol>
+
+  <h3>What to prioritise revising (concepts)</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Poetry devices (ranked by memo frequency)</h4>
+      <p class="small">Metaphor · personification · simile · alliteration · assonance · onomatopoeia · irony · tone · mood · imagery · symbolism · diction/connotation · rhyme scheme · stanza/quatrain/couplet · enjambment · theme · literal vs figurative.</p>
+    </div>
+    <div class="card">
+      <h4>Macbeth concepts (ranked by memo frequency)</h4>
+      <p class="small">Dramatic irony · characterisation · soliloquy · aside · theme · symbolism (blood, darkness, sleep) · conflict · foreshadowing · tone · stagecraft/director's lens · motif · dramatic tension.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXAM STRATEGY ============ -->
+<section id="strategy">
+  <div class="sec-head"><h2>⏱ Examination Strategy — Max Marks in 2½ Hours</h2></div>
+  <p class="lead">The paper's own instructions tell you to spend about 75 minutes per section. Use every mark as a clock.</p>
+
+  <h3>1 · Time allocation</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>Block</th><th>Time</th><th>What you do</th></tr></thead>
+    <tbody>
+      <tr><td>First 5 min</td><td>0–5</td><td>Read instructions; tick your two sections on the checklist (Drama + Poetry only).</td></tr>
+      <tr><td>Macbeth</td><td>~75 min</td><td>Read extract 3.1 → answer; read extract 3.2 → answer (≈35 marks).</td></tr>
+      <tr><td>Poetry</td><td>~70 min</td><td>Read poem 6.1 → answer; read poem 6.2 → answer (≈35 marks).</td></tr>
+      <tr><td>Final 5 min</td><td>—</td><td>Check numbering, spelling-that-changes-meaning, and that you answered BOTH parts of each 3-mark question.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <span class="t">⌛ The 2-minutes-per-mark rule</span>
+    70 marks in 150 minutes ≈ <b>2 minutes per mark</b>. A 3-mark “discuss” question deserves ~6 minutes; a 1-mark multiple choice ~30 seconds. Don't spend 10 minutes polishing a 1-mark answer.
+  </div>
+
+  <h3>2 · Interpret the question before writing</h3>
+  <ol>
+    <li><b>Circle the command word</b> (explain/discuss/identify/describe/substantiate) — it fixes the answer's shape.</li>
+    <li><b>Circle the marks</b> — the mark value tells you how many points to give.</li>
+    <li><b>Note the line reference</b> — “Refer to line 5” means your answer must use line 5, not the whole poem.</li>
+    <li><b>Note “as a whole”</b> — this flips it: step outside the extract and use the whole text.</li>
+    <li><b>Note “State TWO”</b> — exactly two, no more, no less.</li>
+  </ol>
+
+  <h3>3 · Produce memo-shaped answers</h3>
+  <div class="card">
+    <ul style="margin:6px 0">
+      <li><b>Answer in the order asked</b> and number exactly as the paper does (3.1.2, 6.2.4…).</li>
+      <li><b>One fact = one mark.</b> A 2-mark answer has two clear pieces; a 3-mark answer has 2–3 supported points.</li>
+      <li><b>Lead with the mark-earning word</b> (the tone word, the device, the trait), then attach the reason.</li>
+      <li><b>Use the memo's connectives:</b> “because”, “in the same way that… so too”, “yet/but” (for irony), “this shows that…”.</li>
+      <li><b>Quote only when asked</b>, and don't waste time on inverted commas — you're not penalised for omitting them.</li>
+    </ul>
+  </div>
+
+  <h3>4 · Avoid the mark-losers</h3>
+  <ul>
+    <li><b>Hedging with two answers</b> — the first is marked. Commit to one.</li>
+    <li><b>Opinion without substantiation</b> — “I think he's good” earns nothing on a 3-mark question.</li>
+    <li><b>Staying inside the extract</b> on “as a whole” questions.</li>
+    <li><b>Answering a novel/short-story question</b> — you answer Drama + Poetry only.</li>
+    <li><b>Wrong device name</b> — learn metaphor vs simile vs personification vs alliteration vs assonance precisely.</li>
+    <li><b>Padding</b> — long answers don't earn extra; they cost you the next question.</li>
+  </ul>
+
+  <h3>5 · A full-mark answer checklist</h3>
+  <div class="card">
+    <ul class="small" style="margin:4px 0">
+      <li>☑ Command word respected (name / explain / discuss / substantiate).</li>
+      <li>☑ Right number of points for the mark value.</li>
+      <li>☑ Grounded in the text (quote or line reference).</li>
+      <li>☑ “Discuss” answers take a clear stance and give 2–3 reasons.</li>
+      <li>☑ Spelling that could change meaning is corrected.</li>
+      <li>☑ Numbering matches the question paper.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section id="sources">
+  <div class="sec-head"><h2>📚 Sources</h2></div>
+  <p class="lead">All analysis is grounded in these official DBE documents (English First Additional Language Paper 2, question papers and marking guidelines, November 2021–2025).</p>
+  <div class="card">
+    <ul class="sources">
+      <li><b>DBE — Education.gov.za official portal</b> (question papers &amp; marking guidelines):<br>· English FAL P2 Nov 2021 QP + MG — education.gov.za/Portals/0/CD/2021NovemberExamPapers/…<br>· English FAL P2 Nov 2022 MG — education.gov.za/Portals/0/CD/2022NovExams/…<br>· English FAL P2 Nov 2023 QP + MG — education.gov.za/Portals/0/CD/2023%20NovPapers/…<br>· English FAL P2 Nov 2025 MG — education.gov.za/Portals/0/CD/2025%20Nov%20MG/…<br>· 2025 November Exam Papers index — education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/2025NovemberExamPapers.aspx</li>
+      <li><b>Stanmorephysics.com</b> — combined “P2 and Memo” PDFs for Nov 2022, 2023, 2024 (stanmorephysics.com/wp-content/uploads/…/NSC-English-FAL-Grade12-November-<i>YEAR</i>-P2-and-Memo.pdf).</li>
+      <li><b>Western Cape Government (WCED)</b> — English FAL P2 Nov 2025 question paper (westerncape.gov.za/education/files/wcg-blob-files?file=2026-06%2FEnglish+FAL+P2+Nov+2025.pdf).</li>
+      <li><b>Stellenbosch Tutors</b> — English FAL P2 Nov 2025 marking guidelines mirror.</li>
+      <li>May/June 2025 national P2 cross-checked for format confirmation.</li>
+    </ul>
+    <p class="small">Note: The November 2026 paper was not yet published at the time of writing (the exam sits in November 2026), so the analysis covers 2021–2025 — five complete national papers.</p>
+  </div>
+</section>
+<!-- ============ FLASHCARDS & QUIZ ============ -->
+<section id="practice">
+  <div class="sec-head"><h2>🃏 Flashcards &amp; Quiz</h2></div>
+  <p class="lead">Test yourself. Flashcards flip on click; the quiz marks your answers and explains every one. All self-contained and offline.</p>
+
+  <h3>Flashcards</h3>
+  <div class="card">
+    <div class="fc-stage">
+      <div class="flashcard" id="flashcard" onclick="flipCard()">
+        <div class="fc-inner">
+          <div class="fc-face fc-front">
+            <div class="cat" id="fc-cat">Poetry · Device</div>
+            <div class="big" id="fc-front">Metaphor</div>
+            <div class="small fc-hint">Click to flip</div>
+          </div>
+          <div class="fc-face fc-back">
+            <div class="cat">Answer</div>
+            <div class="small" id="fc-back" style="color:var(--ink);font-size:15px">A direct comparison without “like/as”.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-count" id="fc-count">Card 1 / 30</div>
+      <div class="fc-controls">
+        <button class="btn ghost" onclick="prevCard()">← Prev</button>
+        <button class="btn ghost" onclick="nextCard()">Next →</button>
+        <button class="btn ghost" onclick="shuffleCards()">🔀 Shuffle</button>
+      </div>
+    </div>
+  </div>
+
+  <h3>Quiz</h3>
+  <div class="card">
+    <div class="quizbar">
+      <button class="btn" onclick="startQuiz()">Start / Restart quiz</button>
+      <span id="quiz-score" class="small" style="font-weight:700"></span>
+    </div>
+    <div id="quiz"></div>
+  </div>
+</section>
+
+<!-- ============ PROGRESS ============ -->
+<section id="progress">
+  <div class="sec-head"><h2>✅ Revision Progress Tracker</h2></div>
+  <p class="lead">Tick topics off as you master them. Your progress is saved in this browser (localStorage), so it survives closing the file. The bar updates as you tick.</p>
+  <div class="card">
+    <div class="small" style="font-weight:700;margin-bottom:2px">Overall progress</div>
+    <div class="pbar"><div id="pfill" style="width:0%"></div></div>
+    <div class="small" id="ptext">0% complete</div>
+    <div style="margin-top:12px" id="checklist"></div>
+    <div style="margin-top:14px"><button class="btn ghost" onclick="resetProgress()">Reset progress</button></div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+<script>
+/* ============ FLASHCARDS ============ */
+const CARDS = [
+  {cat:"Poetry · Device", f:"Metaphor", b:"A direct comparison that says one thing IS another (no 'like/as'). E.g. 'That time of year thou mayst in me behold' — the speaker is autumn."},
+  {cat:"Poetry · Device", f:"Simile", b:"A comparison using 'like' or 'as'. E.g. 'words hide like … part of life' (Hard to find)."},
+  {cat:"Poetry · Device", f:"Personification", b:"Giving human qualities to a non-human thing. E.g. 'It rounds and rounds Despair to drowning' (Inversnaid)."},
+  {cat:"Poetry · Device", f:"Imagery", b:"Language that appeals to the senses. E.g. 'yellow leaves … do hang' — visual imagery of autumn."},
+  {cat:"Poetry · Device", f:"Symbolism", b:"An object that stands for a bigger idea. E.g. 'twilight'/'black night' symbolise approaching death in Sonnet 73."},
+  {cat:"Poetry · Device", f:"Irony", b:"A gap between appearance and reality, or what is said and what is true. Explain with 'yet/but'."},
+  {cat:"Poetry · Sound", f:"Alliteration", b:"Repetition of the same CONSONANT sound at the start of words. E.g. 'rollrock highroad roaring'."},
+  {cat:"Poetry · Sound", f:"Assonance", b:"Repetition of a VOWEL sound within words. E.g. 'flutes and low to the lake falls home'."},
+  {cat:"Poetry · Sound", f:"Onomatopoeia", b:"A word that sounds like its meaning. E.g. 'roaring', 'shriek'."},
+  {cat:"Poetry · Structure", f:"Rhyme scheme", b:"The pattern of end-rhymes, labelled with letters. E.g. Inversnaid = aabb ccdd eeff gghh."},
+  {cat:"Poetry · Structure", f:"Stanza / Quatrain / Couplet", b:"Stanza = a verse paragraph; a quatrain = 4 lines; a couplet = 2 lines (often rhymed)."},
+  {cat:"Poetry · Structure", f:"Enjambment", b:"A sentence running over a line break without punctuation — creates flow/urgency."},
+  {cat:"Poetry · Structure", f:"Caesura", b:"A strong pause INSIDE a line, marked by punctuation — creates emphasis or hesitation."},
+  {cat:"Poetry · Structure", f:"Repetition / Refrain", b:"Repeating a word/phrase for emphasis. E.g. 'O let them be left, wildness and wet'."},
+  {cat:"Poetry · Meaning", f:"Diction / word choice", b:"The poet's deliberate word choice and its CONNOTATIONS. 'darksome', 'pitchblack' → ominous."},
+  {cat:"Poetry · Meaning", f:"Tone", b:"The speaker's attitude/feeling (angry, nostalgic, pleading). Exam asks 'what tone + why'."},
+  {cat:"Poetry · Meaning", f:"Mood / Atmosphere", b:"The feeling the READER gets. Tone = speaker's feeling; mood = reader's feeling."},
+  {cat:"Poetry · Meaning", f:"Theme", b:"The central idea/message (love, death, nature, guilt, aging)."},
+  {cat:"Poetry · Meaning", f:"Literal vs figurative", b:"Literal = surface meaning; figurative = deeper, non-literal meaning. Exams test both."},
+  {cat:"Poetry · Meaning", f:"Speaker vs poet", b:"Speaker = the voice/persona in the poem; poet = the author. Always answer about the SPEAKER."},
+  {cat:"Macbeth · Technique", f:"Dramatic irony", b:"Audience knows what a character doesn't. E.g. Duncan praises the 'pleasant' castle where he'll be killed."},
+  {cat:"Macbeth · Technique", f:"Soliloquy", b:"A speech spoken ALONE on stage revealing private thoughts. E.g. 'Is this a dagger…', 'Tomorrow…'."},
+  {cat:"Macbeth · Technique", f:"Aside", b:"A short remark to the audience others don't hear. E.g. '(aside) Time, thou anticipatest my dread exploits.'"},
+  {cat:"Macbeth · Technique", f:"Monologue", b:"A long speech to OTHERS on stage (not private like a soliloquy)."},
+  {cat:"Macbeth · Technique", f:"Symbolism", b:"Blood = guilt; darkness = evil; sleep = innocence; the dagger = murderous intent."},
+  {cat:"Macbeth · Technique", f:"Motif", b:"A repeated image/idea (blood, sleep, unnatural events) tracking a theme's development."},
+  {cat:"Macbeth · Technique", f:"Foreshadowing", b:"Hints of events to come. E.g. the witches' prophecies; 'There's no art to find the mind's construction in the face.'"},
+  {cat:"Macbeth · Technique", f:"Conflict", b:"External (Macbeth vs Macduff) or internal (ambition vs conscience). Drives the plot."},
+  {cat:"Macbeth · Technique", f:"Dramatic tension", b:"The suspense as danger approaches. E.g. the knocking at the gate after the murder."},
+  {cat:"Macbeth · Technique", f:"Characterisation", b:"How a character is built and develops — via words, actions, others' views, and change over the play."}
+];
+let fcIndex = 0, fcFlipped = false;
+function renderCard(){
+  const c = CARDS[fcIndex];
+  document.getElementById("fc-cat").textContent = c.cat;
+  document.getElementById("fc-front").textContent = c.f;
+  document.getElementById("fc-back").textContent = c.b;
+  document.getElementById("fc-count").textContent = "Card " + (fcIndex+1) + " / " + CARDS.length;
+  fcFlipped = false;
+  document.getElementById("flashcard").classList.remove("flipped");
+}
+function flipCard(){ document.getElementById("flashcard").classList.toggle("flipped"); }
+function nextCard(){ fcIndex = (fcIndex+1)%CARDS.length; renderCard(); }
+function prevCard(){ fcIndex = (fcIndex-1+CARDS.length)%CARDS.length; renderCard(); }
+function shuffleCards(){
+  for(let i=CARDS.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [CARDS[i],CARDS[j]]=[CARDS[j],CARDS[i]]; }
+  fcIndex = 0; renderCard();
+}
+renderCard();
+
+/* ============ QUIZ ============ */
+const QUIZ = [
+  {q:"Which figure of speech says one thing IS another without 'like' or 'as'?", o:["Simile","Metaphor","Personification","Alliteration"], a:1, e:"Metaphor is a direct comparison (X is Y). Simile uses 'like/as'; personification gives human traits to non-human things; alliteration repeats consonant sounds."},
+  {q:"'It rounds and rounds Despair to drowning' (Inversnaid) is an example of…", o:["Simile","Alliteration","Personification","Irony"], a:2, e:"'Despair' is given the human ability to be 'drowned' — a human quality assigned to an abstract idea."},
+  {q:"'rollrock highroad roaring' (Inversnaid) mainly uses…", o:["Assonance","Onomatopoeia","Alliteration","Rhyme"], a:2, e:"The repeated 'r' consonant sound is alliteration. (The 2025 paper's TRUE/FALSE question also expected you to know this is NOT assonance.)"},
+  {q:"In Sonnet 73, the 'yellow leaves', 'twilight' and 'glowing fire' are symbols of…", o:["Spring and rebirth","Love and marriage","Approaching death / old age","War and conflict"], a:2, e:"Each image — autumn leaves, fading sunset, dying embers — symbolises the speaker's old age and coming death."},
+  {q:"'Just as the bare branches lose their leaves, so too the speaker's body weakens as he ages.' This answer structure earns full marks because it…", o:["Names the device twice","Uses 'just as… so too' to link the image to its deeper meaning","Quotes the whole poem","Lists three devices"], a:1, e:"The memo's model answers use 'in the same way that X…, so too Y…' to show the comparison behind the figure of speech."},
+  {q:"'Explain the irony': Lady Macbeth welcomes Duncan and says everything will be repaid, yet she is plotting to murder him. This earns marks because it…", o:["Defines irony","Gives both the surface meaning AND the hidden reality","Only quotes her words","Describes her tone"], a:1, e:"Irony answers need the gap: what appears true (the welcome) vs what is actually true (the murder plot), joined by 'yet/but'."},
+  {q:"A 2-mark 'Explain' question usually requires…", o:["One long paragraph","Two separate answers","A point AND its reason (both parts)","Only a quote"], a:2, e:"The memo often ends such answers with 'NOTE: both parts must be included to earn the marks.'"},
+  {q:"'What tone would the speaker use? (a) — Why? (b)' — how many marks is this worth and what do you give?", o:["2 marks: a tone word + a reason","1 mark: just the tone","3 marks: a discussion","1 mark: just a quote"], a:0, e:"It is 1 mark for the precise tone word and 1 mark for the reason. Memo example: 'Confidence/assurance' + 'He is convinced Scotland will be restored.'"},
+  {q:"For the 'If you were the director… State TWO actions' question, a full-mark answer must be…", o:["Two feelings the character has","Two physical, stageable actions","One long description","A summary of the scene"], a:1, e:"The memo lists physical actions (e.g. 'beat his chest', 'move his hands from left to right') — never feelings."},
+  {q:"'One of the themes is X. Discuss this theme.' (3 marks) — full marks require…", o:["A definition of the theme","2–3 well-substantiated examples grounded in the text","Agreeing with the statement","A single strong quote"], a:1, e:"The memo: 'For full marks, the response must be well-substantiated… grounded in the play/poem.' 1–2 marks if not substantiated."},
+  {q:"In 'Discuss your view' questions, how many marks is a bare 'Yes' or 'No' worth?", o:["3 marks","2 marks","1 mark","0 marks"], a:3, e:"The memo states: 'Do NOT award a mark for YES or NO.' Only the substantiation is credited."},
+  {q:"'Refer to the drama as a whole' means you should…", o:["Only discuss the printed extract","Use events from anywhere in the play","Quote Shakespeare's biography","Compare to another play"], a:1, e:"These 3-mark questions test knowledge of the whole play, not just the extract in front of you."},
+  {q:"Macbeth's dagger soliloquy (Act 2 Sc 1) is a…", o:["Monologue","Aside","Soliloquy","Dialogue"], a:2, e:"A soliloquy is spoken alone on stage, revealing private thoughts. The dagger speech is Macbeth's private inner conflict."},
+  {q:"The recurring image of BLOOD in Macbeth mainly symbolises…", o:["Bravery","Guilt","Love","Royalty"], a:1, e:"Blood tracks guilt: 'Will all great Neptune's ocean wash this blood clean?' and Lady Macbeth's 'Out, damned spot!'"},
+  {q:"The prophecy 'none of woman born shall harm Macbeth' is an example of…", o:["Dramatic irony and deceptive prophecy","Foreshadowing that he will win","Literal truth only","Simile"], a:0, e:"It is technically true but misleading — Macduff was born by caesarean, so it deceives Macbeth into false confidence (dramatic irony)."},
+  {q:"Why is Act 5 the most-tested part of Macbeth (in 4 of 5 years)?", o:["It has the most jokes","It shows the climax: Macbeth's fall and order restored","It has the only soliloquy","It is the shortest act"], a:1, e:"The extracts chosen across 2021, 2023, 2024 and 2025 all draw from Act 5 — the climax and resolution."},
+  {q:"'Describe the time and place' (2 marks) — a full answer must give…", o:["Two places","A time AND a place","Only the mood","A quote"], a:1, e:"The memo: 'accept any ONE reference to time and ONE to place' — one mark each."},
+  {q:"Which pair is CORRECT?", o:["Alliteration = vowel sounds; assonance = consonants","Alliteration = consonants; assonance = vowels","Both are vowel sounds","Both are rhyme"], a:1, e:"Alliteration repeats consonant sounds; assonance repeats vowel sounds. The 2025 paper tested exactly this distinction."},
+  {q:"A good 'substantiate your answer' response always…", o:["Gives a trait/claim AND evidence from the text","Only quotes","Only gives an opinion","Asks a question back"], a:0, e:"'Substantiate' = support with evidence. The memo pairs the trait with proof: 'He is principled WHEN he claims…'"},
+  {q:"The theme of 'appearance vs reality' in Macbeth is best captured by…", o:["'Tomorrow, and tomorrow, and tomorrow'","'Fair is foul, and foul is fair'","'Out, damned spot!'","'Is this a dagger?'"], a:1, e:"'Fair is foul, and foul is fair' states the play's central inversion — things are not what they seem."}
+];
+let quizState = {started:false, answers:[], done:false};
+function startQuiz(){
+  quizState = {started:true, answers:Array(QUIZ.length).fill(-1), done:false};
+  const box = document.getElementById("quiz");
+  box.innerHTML = QUIZ.map((q,i)=>`
+    <div class="quiz-q" id="qq-${i}">
+      <div class="q">${i+1}. ${q.q}</div>
+      ${q.o.map((opt,j)=>`<button class="opt" id="qo-${i}-${j}" onclick="answer(${i},${j})">${opt}</button>`).join("")}
+      <div class="explain" id="qe-${i}"><b>Explanation:</b> ${q.e}</div>
+    </div>`).join("");
+  document.getElementById("quiz-score").textContent = "";
+  box.scrollIntoView({behavior:"smooth"});
+}
+function answer(i,j){
+  if(quizState.done) return;
+  quizState.answers[i] = j;
+  for(let k=0;k<QUIZ[i].o.length;k++){
+    const b = document.getElementById("qo-"+i+"-"+k);
+    b.disabled = true;
+    if(k===QUIZ[i].a) b.classList.add("correct");
+    else if(k===j) b.classList.add("wrong");
+  }
+  document.getElementById("qe-"+i).classList.add("show");
+  // score when all answered
+  const answered = quizState.answers.filter(a=>a>=0).length;
+  if(answered===QUIZ.length){
+    quizState.done = true;
+    const score = quizState.answers.reduce((s,a,idx)=>s+(a===QUIZ[idx].a?1:0),0);
+    document.getElementById("quiz-score").textContent = "Score: " + score + " / " + QUIZ.length + (score===QUIZ.length?" 🎉":(score>=QUIZ.length*0.8?" 👍":" — review the explanations above"));
+  }
+}
+
+/* ============ PROGRESS TRACKER ============ */
+const TOPICS = [
+  "Exam structure: 70 marks, 2½ hrs, two sections",
+  "Know you answer Macbeth + Poetry ONLY",
+  "Question types: matching / MCQ / TRUE-FALSE / fill-in",
+  "Question types: figure of speech (identify + explain)",
+  "Question types: irony, tone, setting, character+substantiate",
+  "3-mark questions: theme discussion",
+  "3-mark questions: 'Discuss your view'",
+  "Director question: 'State TWO actions'",
+  "Command words: explain / discuss / identify / describe / substantiate",
+  "Marking rules (open-ended = substantiate, not yes/no)",
+  "Poetry devices: metaphor, simile, personification, imagery, symbolism",
+  "Poetry sound: alliteration, assonance, onomatopoeia",
+  "Poetry structure: rhyme, stanza, enjambment, caesura, repetition",
+  "Poetry meaning: tone, mood, theme, diction, literal vs figurative",
+  "Macbeth: characters (Macbeth, Lady M, Duncan, Banquo, Macduff, Malcolm, witches)",
+  "Macbeth: themes (ambition, guilt, appearance vs reality, order vs chaos, manhood)",
+  "Macbeth: key scenes (Act 1–5 hotspots, especially Act 5)",
+  "Macbeth: key quotes + context",
+  "Macbeth: dramatic irony, soliloquy, aside, foreshadowing, symbolism",
+  "Exam strategy: time management (~2 min per mark)"
+];
+function loadProgress(){ try{return JSON.parse(localStorage.getItem("engfal_p2_progress")||"{}");}catch(e){return {};} }
+function saveProgress(p){ localStorage.setItem("engfal_p2_progress", JSON.stringify(p)); }
+function renderProgress(){
+  const p = loadProgress();
+  const wrap = document.getElementById("checklist");
+  wrap.innerHTML = TOPICS.map((t,i)=>{
+    const done = p[i] ? true : false;
+    return `<label class="check ${done?'done':''}"><input type="checkbox" ${done?'checked':''} onchange="toggleTopic(${i}, this.checked)"><span>${t}</span></label>`;
+  }).join("");
+  const doneCount = TOPICS.filter((t,i)=>p[i]).length;
+  const pct = Math.round(doneCount/TOPICS.length*100);
+  document.getElementById("pfill").style.width = pct + "%";
+  document.getElementById("ptext").textContent = pct + "% complete (" + doneCount + " / " + TOPICS.length + ")";
+}
+function toggleTopic(i, checked){ const p = loadProgress(); if(checked) p[i]=1; else delete p[i]; saveProgress(p); renderProgress(); }
+function resetProgress(){ localStorage.removeItem("engfal_p2_progress"); renderProgress(); }
+renderProgress();
+
+/* ============ SEARCH ============ */
+function buildIndex(){
+  const nodes = document.querySelectorAll("details summary, h2, h3, h4, th, .lead, .big");
+  const idx = [];
+  nodes.forEach(el=>{ idx.push({el, text:(el.textContent||"").toLowerCase()}); });
+  return idx;
+}
+const IDX = buildIndex();
+let searchPanel = null;
+function ensurePanel(){
+  if(!searchPanel){
+    searchPanel = document.createElement("div");
+    searchPanel.style.cssText = "position:absolute;z-index:60;background:#fff;border:1px solid #e3e8ef;border-radius:10px;box-shadow:0 8px 24px rgba(16,24,40,.14);max-height:340px;overflow:auto;display:none;";
+    document.querySelector(".topbar-in").style.position="relative";
+    document.querySelector(".topbar-in").appendChild(searchPanel);
+  }
+  return searchPanel;
+}
+document.getElementById("search").addEventListener("input", function(){
+  const q = this.value.trim().toLowerCase();
+  const panel = ensurePanel();
+  if(q.length < 2){ panel.style.display="none"; return; }
+  const hits = IDX.filter(it=>it.text.includes(q)).slice(0,20);
+  if(hits.length===0){ panel.innerHTML = '<div style="padding:12px 16px;color:#5b6472;font-size:13px">No matches for "'+q+'"</div>'; panel.style.display="block"; return; }
+  panel.innerHTML = hits.map((h,i)=>{
+    const label = h.el.textContent.trim().slice(0,80) || "—";
+    return `<div data-i="${i}" style="padding:9px 16px;cursor:pointer;font-size:14px;border-bottom:1px solid #f0f3f7" onmouseenter="this.style.background='#eef6f3'">${label}</div>`;
+  }).join("");
+  panel.querySelectorAll("div").forEach(d=>{
+    d.onclick = ()=>{
+      const h = hits[+d.dataset.i];
+      const el = h.el.closest("details") || h.el.closest("section") || h.el;
+      if(el.tagName==="DETAILS" && !el.open) el.open = true;
+      el.scrollIntoView({behavior:"smooth", block:"center"});
+      el.style.boxShadow = "0 0 0 3px #0e7c66";
+      setTimeout(()=>el.style.boxShadow="", 1500);
+      panel.style.display="none";
+      document.getElementById("search").value = "";
+    };
+  });
+  panel.style.display="block";
+});
+document.addEventListener("click", function(e){ if(searchPanel && !searchPanel.contains(e.target) && e.target.id!=="search") searchPanel.style.display="none"; });
+
+/* ============ NAV SCROLL-SPY ============ */
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("#nav a");
+window.addEventListener("scroll", ()=>{
+  let cur = sections[0].id;
+  sections.forEach(s=>{ if(window.scrollY >= s.offsetTop - 100) cur = s.id; });
+  navLinks.forEach(a=>{ a.classList.toggle("active", a.getAttribute("href")==="#"+cur); });
+});
+</script>
+</body>
+</html>
