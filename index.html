@@ -12,11 +12,12 @@
   --danger:#b3261e; --danger-soft:#fdecea; --ok:#1a7f37; --ok-soft:#e6f4ea;
   --radius:12px; --shadow:0 1px 3px rgba(16,24,40,.08),0 1px 2px rgba(16,24,40,.04);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+img{max-width:100%;height:auto}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.6;font-size:16px}
+  line-height:1.6;font-size:16px;-webkit-text-size-adjust:100%;overflow-wrap:break-word}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
@@ -26,7 +27,7 @@ a:hover{text-decoration:underline}
 .topbar-in{max-width:1180px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .brand{font-weight:800;font-size:17px;letter-spacing:-.02em;color:var(--accent-ink);white-space:nowrap}
 .brand span{color:var(--gold)}
-#search{flex:1;min-width:200px;padding:9px 13px;border:1px solid var(--line);border-radius:9px;font-size:14px;background:var(--bg)}
+#search{flex:1;min-width:200px;padding:9px 13px;border:1px solid var(--line);border-radius:9px;font-size:16px;background:var(--bg)}
 #search:focus{outline:2px solid var(--accent);border-color:transparent}
 
 nav{background:var(--card);border-bottom:1px solid var(--line)}
@@ -96,12 +97,12 @@ details .dbody{padding:4px 18px 16px;border-top:1px solid var(--line)}
 
 /* flashcards */
 .fc-stage{display:flex;flex-direction:column;align-items:center;gap:14px}
-.flashcard{width:100%;max-width:560px;min-height:200px;perspective:1200px;cursor:pointer}
-.fc-inner{position:relative;width:100%;min-height:200px;transform-style:preserve-3d;transition:transform .45s}
+.flashcard{width:100%;max-width:560px;perspective:1200px;cursor:pointer}
+.fc-inner{position:relative;width:100%;display:grid;transform-style:preserve-3d;transition:transform .45s}
 .flashcard.flipped .fc-inner{transform:rotateY(180deg)}
-.fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+.fc-face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;
   border:1px solid var(--line);border-radius:var(--radius);background:var(--card);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;box-shadow:var(--shadow)}
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px;text-align:center;box-shadow:var(--shadow);min-height:200px}
 .fc-back{transform:rotateY(180deg);background:var(--accent-soft)}
 .fc-face .cat{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
 .fc-face .big{font-size:22px;font-weight:800}
@@ -147,6 +148,23 @@ button{font-family:inherit;cursor:pointer}
 .small{font-size:13px;color:var(--muted)}
 mark{background:#ffe58a}
 kbd{background:#eef2f6;border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:12.5px}
+@media(max-width:640px){
+  .wrap{padding:18px 12px 60px}
+  section{margin-bottom:34px}
+  section h2{font-size:22px}
+  section h3{font-size:17px}
+  .lead{font-size:15px}
+  .btn{padding:12px 18px;font-size:15px;min-height:44px}
+  .opt{padding:13px 14px;font-size:15px}
+  nav a{padding:13px 13px}
+  details summary{padding:14px 15px}
+  .fc-face{padding:20px;min-height:180px}
+  .fc-face .big{font-size:19px}
+  .topbar-in{padding:10px 12px;gap:10px}
+  .brand{font-size:15px}
+  .card{padding:15px 16px}
+  th,td{padding:7px 9px}
+}
 </style>
 </head>
 <body>
@@ -241,7 +259,7 @@ kbd{background:#eef2f6;border:1px solid var(--line);border-radius:5px;padding:1p
   <div class="grid g2">
     <div class="card">
       <h4>Poems tested (Section D)</h4>
-      <div class="tblwrap"><table style="min-width:0">
+      <div class="tblwrap"><table>
         <thead><tr><th>Year</th><th>Poem 6.1</th><th>Poem 6.2</th></tr></thead>
         <tbody>
           <tr><td class="y">2021</td><td>Sonnet 18 (Shakespeare)</td><td>Alexandra (Serote)</td></tr>
@@ -255,7 +273,7 @@ kbd{background:#eef2f6;border:1px solid var(--line);border-radius:5px;padding:1p
     </div>
     <div class="card">
       <h4>Macbeth extracts tested (Section B)</h4>
-      <div class="tblwrap"><table style="min-width:0">
+      <div class="tblwrap"><table>
         <thead><tr><th>Year</th><th>Extract 3.1</th><th>Extract 3.2</th></tr></thead>
         <tbody>
           <tr><td class="y">2021</td><td>Act 1 Sc 3–4</td><td>Act 5 Sc 7–8</td></tr>
@@ -1268,7 +1286,7 @@ let searchPanel = null;
 function ensurePanel(){
   if(!searchPanel){
     searchPanel = document.createElement("div");
-    searchPanel.style.cssText = "position:absolute;z-index:60;background:#fff;border:1px solid #e3e8ef;border-radius:10px;box-shadow:0 8px 24px rgba(16,24,40,.14);max-height:340px;overflow:auto;display:none;";
+    searchPanel.style.cssText = "position:absolute;z-index:60;left:0;right:0;top:calc(100% + 4px);background:#fff;border:1px solid #e3e8ef;border-radius:10px;box-shadow:0 8px 24px rgba(16,24,40,.14);max-height:340px;overflow:auto;display:none;";
     document.querySelector(".topbar-in").style.position="relative";
     document.querySelector(".topbar-in").appendChild(searchPanel);
   }
